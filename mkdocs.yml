@@ -1,0 +1,2 @@
+site_name: Documentation RVA
+markdown_extensions: [fenced_code]
