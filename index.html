@@ -135,11 +135,50 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
+        <li class="main active"><a href="#introduction">Introduction</a></li>
+        
+    
+        <li class="main "><a href="#installation">Installation</a></li>
+        
+    
+        <li class="main "><a href="#mise-a-jour-de-la-documentation">Mise à jour de la documentation</a></li>
+        
+    
+        <li class="main "><a href="#deploiement-de-la-documentation">Déploiement de la documentation</a></li>
+        
+    
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<p>Ces pages ont pour objectif de rassembler toutes les notes/codes/commandes de différents outils informatiques.</p></div>
+<h2 id="introduction">Introduction</h2>
+<p>Ces pages ont pour objectif de rassembler toutes les notes/codes/commandes de différents outils informatiques.</p>
+<h2 id="installation">Installation</h2>
+<ul>
+<li>Pré-requis :</li>
+</ul>
+<p><a href="http://www.mkdocs.org/#installation">Installer mkdocs</a></p>
+<ul>
+<li>Installation<pre><code>$ git clone github.com/rvanlande/rvanlande.github.io
+$ git checkout mkdocs
+</code></pre>
+</li>
+</ul>
+<h2 id="mise-a-jour-de-la-documentation">Mise à jour de la documentation</h2>
+<ul>
+<li>
+<p>La documentation se trouve dans le répertoire <code>rvanlande.github.io/docs</code></p>
+</li>
+<li>
+<p>sauvegarde des mises à jour dans git</p>
+<pre><code>$ git commit -am 'update docs'
+$ git push origin/mkdocs
+</code></pre>
+</li>
+</ul>
+<h2 id="deploiement-de-la-documentation">Déploiement de la documentation</h2>
+<pre><code>$ mkdocs gh-deploy --remote-branch master
+</code></pre></div>
             
         </div>
 
@@ -186,5 +225,5 @@
 
 <!--
 MkDocs version : 0.15.3
-Build Date UTC : 2016-07-11 08:17:40.565830
+Build Date UTC : 2016-07-27 14:35:50.889582
 -->

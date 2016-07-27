@@ -2,8 +2,28 @@
     "docs": [
         {
             "location": "/", 
-            "text": "Ces pages ont pour objectif de rassembler toutes les notes/codes/commandes de diff\u00e9rents outils informatiques.", 
+            "text": "Introduction\n\n\nCes pages ont pour objectif de rassembler toutes les notes/codes/commandes de diff\u00e9rents outils informatiques.\n\n\nInstallation\n\n\n\n\nPr\u00e9-requis :\n\n\n\n\nInstaller mkdocs\n\n\n\n\nInstallation\n$ git clone github.com/rvanlande/rvanlande.github.io\n$ git checkout mkdocs\n\n\n\n\n\n\n\nMise \u00e0 jour de la documentation\n\n\n\n\n\n\nLa documentation se trouve dans le r\u00e9pertoire \nrvanlande.github.io/docs\n\n\n\n\n\n\nsauvegarde des mises \u00e0 jour dans git\n\n\n$ git commit -am 'update docs'\n$ git push origin/mkdocs\n\n\n\n\n\n\n\nD\u00e9ploiement de la documentation\n\n\n$ mkdocs gh-deploy --remote-branch master", 
             "title": "Home"
+        }, 
+        {
+            "location": "/#introduction", 
+            "text": "Ces pages ont pour objectif de rassembler toutes les notes/codes/commandes de diff\u00e9rents outils informatiques.", 
+            "title": "Introduction"
+        }, 
+        {
+            "location": "/#installation", 
+            "text": "Pr\u00e9-requis :   Installer mkdocs   Installation $ git clone github.com/rvanlande/rvanlande.github.io\n$ git checkout mkdocs", 
+            "title": "Installation"
+        }, 
+        {
+            "location": "/#mise-a-jour-de-la-documentation", 
+            "text": "La documentation se trouve dans le r\u00e9pertoire  rvanlande.github.io/docs    sauvegarde des mises \u00e0 jour dans git  $ git commit -am 'update docs'\n$ git push origin/mkdocs", 
+            "title": "Mise \u00e0 jour de la documentation"
+        }, 
+        {
+            "location": "/#deploiement-de-la-documentation", 
+            "text": "$ mkdocs gh-deploy --remote-branch master", 
+            "title": "D\u00e9ploiement de la documentation"
         }, 
         {
             "location": "/git/git/", 
