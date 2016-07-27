@@ -12,6 +12,16 @@
     
         
     <url>
+     <loc>None/docker/docker/</loc>
+     <lastmod>2016-07-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
      <loc>None/git/git/</loc>
      <lastmod>2016-07-27</lastmod>
      <changefreq>daily</changefreq>
