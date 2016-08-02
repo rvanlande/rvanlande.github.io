@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
 
-	<title>Linux - La grotte d'Alibaba</title>
+	<title>Docker compose - La grotte d'Alibaba</title>
 
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome-4.5.0.css" rel="stylesheet">
@@ -59,19 +59,19 @@
                 
                 
                 
-                    <li class="dropdown">
+                    <li class="dropdown active">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Docker <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                         
                             
-<li >
-    <a href="../../docker/docker-compose/">Docker compose</a>
+<li class="active">
+    <a href="./">Docker compose</a>
 </li>
 
                         
                             
 <li >
-    <a href="../../docker/docker/">Docker</a>
+    <a href="../docker/">Docker</a>
 </li>
 
                         
@@ -95,13 +95,13 @@
                 
                 
                 
-                    <li class="dropdown active">
+                    <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Linux <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                         
                             
-<li class="active">
-    <a href="./">Linux</a>
+<li >
+    <a href="../../linux/linux/">Linux</a>
 </li>
 
                         
@@ -135,12 +135,12 @@
                 </li>
                 
                     <li >
-                        <a rel="next" href="../../git/git/">
+                        <a rel="next" href="../..">
                             <i class="fa fa-arrow-left"></i> Previous
                         </a>
                     </li>
                     <li >
-                        <a rel="prev" href="../../sql/sql/">
+                        <a rel="prev" href="../docker/">
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
@@ -156,15 +156,27 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
+        <li class="main active"><a href="#docker-compose">Docker Compose</a></li>
+        
+            <li><a href="#installation-sur-debian">Installation sur debian</a></li>
+        
+            <li><a href="#commandes">Commandes</a></li>
+        
+    
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<ul>
-<li>voir les ports ouverts :<pre><code>$ sudo netstat -tulpn
-</code></pre>
-</li>
-</ul></div>
+<h1 id="docker-compose">Docker Compose</h1>
+<h2 id="installation-sur-debian">Installation sur debian</h2>
+<p><a href="https://github.com/docker/compose/releases">Installation</a></p>
+<h2 id="commandes">Commandes</h2>
+<p><a href="https://docs.docker.com/compose/reference/">Liste des commandes</a></p>
+<pre><code>$ docker-compose up -d =&gt; construit, recrée et attache les conteneurs au service
+$ docker-compose down =&gt; arrête les conteneurs et supprime les conteneurs, les réseaux et les images créées par up
+$ docker-compose start [service] =&gt; démarre le ou les services
+$ docker-compose stop [service] =&gt; arrête le ou les services démarrés par start
+</code></pre></div>
             
         </div>
 

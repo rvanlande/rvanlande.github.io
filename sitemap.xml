@@ -12,6 +12,12 @@
     
         
     <url>
+     <loc>None/docker/docker-compose/</loc>
+     <lastmod>2016-08-02</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
      <loc>None/docker/docker/</loc>
      <lastmod>2016-08-02</lastmod>
      <changefreq>daily</changefreq>
