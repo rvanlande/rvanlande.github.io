@@ -2,7 +2,7 @@
     "docs": [
         {
             "location": "/", 
-            "text": "Introduction\n\n\nCes pages ont pour objectif de rassembler toutes les notes/codes/commandes de diff\u00e9rents outils informatiques.\n\n\nInstallation\n\n\n\n\nPr\u00e9-requis :\n\n\n\n\nInstaller mkdocs\n\n\n\n\nInstallation\n$ git clone github.com/rvanlande/rvanlande.github.io\n$ git checkout mkdocs\n\n\n\n\n\n\n\nMise \u00e0 jour de la documentation\n\n\n\n\n\n\nLa documentation se trouve dans le r\u00e9pertoire \nrvanlande.github.io/docs\n\n\n\n\n\n\nsauvegarde des mises \u00e0 jour dans git\n\n\n$ git commit -am 'update docs'\n$ git push origin/mkdocs\n\n\n\n\n\n\n\nD\u00e9ploiement de la documentation\n\n\n$ mkdocs gh-deploy --remote-branch master", 
+            "text": "Introduction\n\n\nCes pages ont pour objectif de rassembler toutes les notes/codes/commandes de diff\u00e9rents outils informatiques.\n\n\nInstallation\n\n\n\n\nPr\u00e9-requis :\n\n\n\n\nInstaller mkdocs\n\n\n\n\nInstallation\n$ git clone github.com/rvanlande/rvanlande.github.io\n$ git checkout mkdocs\n\n\n\n\n\n\n\nMise \u00e0 jour de la documentation\n\n\n\n\n\n\nLa documentation se trouve dans le r\u00e9pertoire \nrvanlande.github.io/docs\n\n\n\n\n\n\nsauvegarde des mises \u00e0 jour dans git\n\n\n$ git commit -am 'update docs'\n$ git push origin mkdocs\n\n\n\n\n\n\n\nD\u00e9ploiement de la documentation\n\n\n$ mkdocs gh-deploy --remote-branch master", 
             "title": "Home"
         }, 
         {
@@ -17,7 +17,7 @@
         }, 
         {
             "location": "/#mise-a-jour-de-la-documentation", 
-            "text": "La documentation se trouve dans le r\u00e9pertoire  rvanlande.github.io/docs    sauvegarde des mises \u00e0 jour dans git  $ git commit -am 'update docs'\n$ git push origin/mkdocs", 
+            "text": "La documentation se trouve dans le r\u00e9pertoire  rvanlande.github.io/docs    sauvegarde des mises \u00e0 jour dans git  $ git commit -am 'update docs'\n$ git push origin mkdocs", 
             "title": "Mise \u00e0 jour de la documentation"
         }, 
         {
@@ -82,7 +82,7 @@
         }, 
         {
             "location": "/git/git/", 
-            "text": "Annuler un merge/commit local\n\n\n$ git reflog =\n montre les r\u00e9f\u00e9rences HEAD\n$ git reset --hard HEAD@{X} =\n repositionne le head de la branche sur le commit correspondant /!\\ Attention la commande annule toutes les modifications en cours de la branches stagged + commited\n\n\n\n\n\n\n\nRecherche des commit li\u00e9s au texte\n\n\n[alias] :\nstr-search = \"!f() { git llg -S $1 --all --source $2; }; f\"", 
+            "text": "Annuler un merge/commit local\n\n\n$ git reflog =\n montre les r\u00e9f\u00e9rences HEAD\n$ git reset --hard HEAD@{X} =\n repositionne le head de la branche sur le commit correspondant  \n/!\\ Attention la commande annule toutes les modifications en cours de la branches stagged + commited\n\n\n\n\n\n\n\nRecherche des commit li\u00e9s au texte\n\n\n[alias] :\nstr-search = \"!f() { git llg -S $1 --all --source $2; }; f\"", 
             "title": "Git"
         }, 
         {
