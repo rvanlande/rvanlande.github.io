@@ -20,7 +20,7 @@ Ces pages ont pour objectif de rassembler toutes les notes/codes/commandes de di
 * sauvegarde des mises à jour dans git
 
         $ git commit -am 'update docs'
-        $ git push origin/mkdocs
+        $ git push origin mkdocs
 
 ## Déploiement de la documentation
 
