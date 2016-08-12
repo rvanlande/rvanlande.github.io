@@ -156,33 +156,28 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#docker">Docker</a></li>
+        <li class="main active"><a href="#docker-engine">Docker Engine</a></li>
         
             <li><a href="#installation-sur-debian">Installation sur debian</a></li>
         
-            <li><a href="#commandes">Commandes</a></li>
-        
-            <li><a href="#image-vs-container">Image vs Container</a></li>
-        
-            <li><a href="#creation-dune-image">Création d'une image</a></li>
-        
-            <li><a href="#creation-et-execution-dun-conteneur">Création et exécution d'un conteneur</a></li>
-        
-            <li><a href="#exemple-clog-pqsql-clog">Exemple clog + pqsql clog</a></li>
+            <li><a href="#quelques-commandes">Quelques commandes</a></li>
         
     
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="docker">Docker</h1>
+<h1 id="docker-engine">Docker Engine</h1>
+<p><a href="https://www.docker.com/">Docker</a><br />
+<a href="https://docs.docker.com/engine/understanding-docker/">Docker Overview</a><br />
+<a href="https://docs.docker.com/engine/reference/commandline/">Docker Commands</a>  </p>
 <h2 id="installation-sur-debian">Installation sur debian</h2>
 <p><a href="https://docs.docker.com/engine/installation/linux/debian/">Installation</a></p>
 <p>Le répertoire contenant tous les données docker (image, conteneur,...) se trouve dans le répertoire suivant :  </p>
 <pre><code>/var/lib/docker
 </code></pre>
-<h2 id="commandes">Commandes</h2>
-<h3 id="image">Image</h3>
+<h2 id="quelques-commandes">Quelques commandes</h2>
+<h3 id="images">Images</h3>
 <pre><code>$ docker images    =&gt; Liste les images docker installées
 $ docker rmi -f &lt;id_image&gt;    =&gt; force la suppression d'une image par son identifiant
 $ docker build -t &lt;nom_image&gt;:&lt;tag&gt;  &lt;path_dockerfile&gt;  =&gt; crée une image basée sur le Dockerfile avec un nom et un tag
@@ -194,107 +189,56 @@ $ docker rmi $(docker images -q -f dangling=true) =&gt; supprime des images temp
 <li>docker run : exécute toutes les commandes CMD du script dockerfile</li>
 </ul>
 <h3 id="conteneur">Conteneur</h3>
-<pre><code>$ docker ps -a    =&gt; liste tous les conteneurs
-$ docker ps -aq | xargs docker rm -v    =&gt; supprime tous les conteneurs et leur volume associé
+<ul>
+<li><strong>création et exécution d'un conteneur</strong> :<pre><code>$ docker run --rm --name &lt;mon_conteneur&gt; --net="host" -v &lt;absolute_path_host&gt;:&lt;absolute_path_conteneur&gt; &lt;image_name&gt;
 </code></pre>
+</li>
+</ul>
+<p>Cette commande créée un conteneur 'mon_conteneur' basé sur l'image 'image_name' et le démarre avec les options suivantes :  </p>
+<p>--rm : supprime le conteneur à la fin de son exécution<br />
+--name : définit un nom pour le conteneur<br />
+--net="host" : définit l'interface réseau du conteneur avec celle de la machine hôte<br />
+-v HOSTDIR:CONTAINERDIR : partage d'un répertoire entre la machine hôte et le conteneur  </p>
+<ul>
+<li>
+<p><strong>Création et exécution d'un conteneur en ouvrant un terminal</strong></p>
+<pre><code>$ docker run -it &lt;image&gt; bin/bash
+</code></pre>
+</li>
+<li>
+<p><strong>Démarrer un conteneur existant</strong> : </p>
+<pre><code>$ docker start &lt;container_id&gt;
+</code></pre>
+</li>
+<li>
+<p><strong>Attacher un terminal à un conteneur en cours d'exécution</strong> : </p>
+<pre><code>$ docker exec -it &lt;container_id&gt; bin/bash
+</code></pre>
+</li>
+<li>
+<p><strong>Lister tous les conteneurs actifs et inactifs</strong> :</p>
+<pre><code>$ docker ps
+$ docker ps -a
+</code></pre>
+</li>
+<li>
+<p><strong>Supprimer tous les conteneurs et leur volume associé</strong> : </p>
+<pre><code>$ docker ps -aq | xargs docker rm -v
+</code></pre>
+</li>
+</ul>
+<p>NOTES :</p>
+<ul>
+<li><strong>Image et conteneur</strong> :</li>
+</ul>
+<p>Une image peut être considéré comme immuable. Démarrer un ou plusieurs conteneurs à partir de cette image ne changera pas l'image. On peut comparer cela à une image virtuelle originale d'une machine virtuelle.  </p>
+<p>Un conteneur démarre l'image et ajoute une couche au-dessus de celle-ci. Cette couche stocke tous les changements du conteneur (création/modification/supression de fichiers ...).</p>
 <h3 id="volume">Volume</h3>
 <p>Liste des volumes orphelins</p>
 <pre><code>$ docker volume ls -qf dangling=true
 </code></pre>
 <p>Suppression des volumes orphelins</p>
 <pre><code>$ docker volume rm $(docker volume ls -qf dangling=true)
-</code></pre>
-<h2 id="image-vs-container">Image vs Container</h2>
-<p>Une image peut être considéré comme immuable. Démarrer un ou plusieurs conteneurs à partir de cette image ne changera pas l'image. On peut comparer cela à une image virtuelle originale d'une machine virtuelle.  </p>
-<p>Un conteneur démarre l'image et ajoute une couche au-dessus de celle-ci. Cette couche stocke tous les changements du conteneur (création/modification/supression de fichiers ...).</p>
-<h2 id="creation-dune-image">Création d'une image</h2>
-<p>Créer un répertoire qui contiendra le fichier Dockerfile de création l'image</p>
-<pre><code>$ mkdir -P createimage/ovya_go
-</code></pre>
-<p>Créer le fichier Dockerfile</p>
-<pre><code>$ touch createimage/ovya_go/Dockerfile
-</code></pre>
-<p>Editer le fichier et créer le script docker permettant de construire l'image, exemple création d'une image go</p>
-<pre><code>FROM debian:latest
-MAINTAINER Renaud Vanlande &lt;rvanlande@ovya.fr&gt;
-RUN apt-get update &amp;&amp; apt-get install -y wget
-RUN wget https://storage.googleapis.com/golang/go1.6.2.linux-amd64.tar.gz 
-RUN tar -C /usr/local -xzf go1.6.2.linux-amd64.tar.gz
-RUN rm -f go1.6.2.linux-amd64.tar.gz
-ENV PATH=$PATH:/usr/local/go/bin
-</code></pre>
-<p>Création de l'image</p>
-<pre><code>$ cd createimage/ovya_go
-$ docker build -t ovya/go:1.6.2 .
-</code></pre>
-<h2 id="creation-et-execution-dun-conteneur">Création et exécution d'un conteneur</h2>
-<pre><code>$ docker run --rm --name ovya_clog --net="host" -v /var/www/clog/:/var/www/clog ovya/clog
-</code></pre>
-<p>Cette commande créée un contenur <strong>ovya_clog</strong> et le démarre avec les options suivantes :  </p>
-<p><strong>--rm</strong> supprime le conteneur à la fin de son exécution  </p>
-<p><strong>--name</strong> définit un nom pour le conteneur<br />
-<strong>--net="host"</strong> définit l'interface réseau du conteneur avec celle de la machine hôte<br />
-<strong>-v HOSTDIR:CONTAINERDIR</strong> partage d'un répertoire entre la machine hôte et le conteneur  </p>
-<pre><code>$ docker run -it &lt;image&gt; bin/bash
-</code></pre>
-<p>Cette commande crée et exécute un conteneur en ouvrant un terminal</p>
-<pre><code>$ docker start &lt;container_id&gt;
-</code></pre>
-<p>Démarre un conteneur existant.</p>
-<pre><code>$ docker exec -it &lt;container_id&gt; bin/bash
-</code></pre>
-<p>Attache un terminal à un conteneur en cours d'exécution.</p>
-<h2 id="exemple-clog-pqsql-clog">Exemple clog + pqsql clog</h2>
-<ul>
-<li><strong>Container : ovya/clog</strong></li>
-</ul>
-<blockquote>
-<p>construction de l'image ovya/clog</p>
-</blockquote>
-<p>~/dev/docker/createimage/ovya_clog/DockerFile </p>
-<pre><code>$ se placer dans le répertoire
-$ docker build -t ovya/clog .
-</code></pre>
-<blockquote>
-<p>création du conteneur</p>
-</blockquote>
-<pre><code>$ docker create --name ovya_clog --net="host" -v /var/www/clog/:/var/www/clog -v /var/log/nginx:/var/log/nginx ovya/clog
-</code></pre>
-<blockquote>
-<p>lancement du conteneur</p>
-</blockquote>
-<pre><code>$ docker start -a &lt;conteneur_id&gt;
-</code></pre>
-<ul>
-<li><strong>Container : ovya/pgsql</strong></li>
-</ul>
-<blockquote>
-<p>construction de l'image ovya/pgsql</p>
-</blockquote>
-<p>~/dev/docker/createimage/ovya_pgsql/</p>
-<ul>
-<li>DockerFile</li>
-<li>
-<p>init-db-user.sh : exécuter à la création de l'image pour ajouter le user rcv</p>
-<p>$ se placer dans le répertoire
-$ docker build -t ovya/pgsql .</p>
-</li>
-</ul>
-<blockquote>
-<p>création du conteneur</p>
-</blockquote>
-<pre><code>$ docker create --name ovya-pgsql -e POSTGRES_PASSWORD=rcv -p 5432:5432 ovya/pgsql
-</code></pre>
-<blockquote>
-<p>lancement du conteneur</p>
-</blockquote>
-<pre><code>$ docker start -a &lt;conteneur_id&gt;
-</code></pre>
-<blockquote>
-<p>Exécution d'une migration (installation du schéma initial)</p>
-</blockquote>
-<pre><code>$ se placer dans le répertoire /var/www/clog
-$ odbm up
 </code></pre></div>
             
         </div>
