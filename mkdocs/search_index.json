@@ -107,7 +107,7 @@
         }, 
         {
             "location": "/linux/linux/", 
-            "text": "voir les ports ouverts :\n$ sudo netstat -tulpn", 
+            "text": "voir les ports ouverts :\n\n\n$ sudo netstat -tulpn\n\n\n\n\n\n\n\nzipper le contenu d'un r\u00e9pertoire\n\n\n$ zip -r nom_du_fichier.zip *", 
             "title": "Linux"
         }, 
         {
