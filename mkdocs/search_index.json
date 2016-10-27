@@ -82,7 +82,7 @@
         }, 
         {
             "location": "/git/git/", 
-            "text": "Annuler un merge/commit local\n\n\n$ git reflog =\n montre les r\u00e9f\u00e9rences HEAD\n$ git reset --hard HEAD@{X} =\n repositionne le head de la branche sur le commit correspondant  \n/!\\ Attention la commande annule toutes les modifications en cours de la branches stagged + commited\n\n\n\n\n\n\n\nRecherche des commit li\u00e9s au texte\n\n\n[alias] :\nstr-search = \"!f() { git llg -S $1 --all --source $2; }; f\"", 
+            "text": "Supprimer une branche\n\n\n$ git branch -d \nbranch_name\n               # supprime la branche locale\n$ git push origin --delete \nbranch_name\n    # supprime la branche distante\n\n\n\n\n\n\n\nAnnuler un merge/commit local\n\n\n$ git reflog =\n montre les r\u00e9f\u00e9rences HEAD\n$ git reset --hard HEAD@{X} =\n repositionne le head de la branche sur le commit correspondant  \n/!\\ Attention la commande annule toutes les modifications en cours de la branches stagged + commited\n\n\n\n\n\n\n\nRecherche des commit li\u00e9s au texte\n\n\n[alias] :\nstr-search = \"!f() { git llg -S $1 --all --source $2; }; f\"", 
             "title": "Git"
         }, 
         {

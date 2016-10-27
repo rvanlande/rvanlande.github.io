@@ -162,6 +162,12 @@
 
 <ul>
 <li>
+<p>Supprimer une branche</p>
+<pre><code>$ git branch -d &lt;branch_name&gt;               # supprime la branche locale
+$ git push origin --delete &lt;branch_name&gt;    # supprime la branche distante
+</code></pre>
+</li>
+<li>
 <p>Annuler un merge/commit local</p>
 <pre><code>$ git reflog =&gt; montre les références HEAD
 $ git reset --hard HEAD@{X} =&gt; repositionne le head de la branche sur le commit correspondant  
