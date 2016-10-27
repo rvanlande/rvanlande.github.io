@@ -1,3 +1,8 @@
+* Supprimer une branche
+
+        $ git branch -d <branch_name>               # supprime la branche locale
+        $ git push origin --delete <branch_name>    # supprime la branche distante
+
 * Annuler un merge/commit local
 
         $ git reflog => montre les références HEAD
