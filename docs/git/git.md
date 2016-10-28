@@ -1,3 +1,7 @@
+* Mettre à jour l'url d'un dépôt sur origin
+
+        $ git remote set-url origin <https://new_url/depot.git>
+
 * Supprimer une branche
 
         $ git branch -d <branch_name>               # supprime la branche locale
