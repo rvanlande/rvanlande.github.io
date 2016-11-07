@@ -87,8 +87,23 @@
         }, 
         {
             "location": "/linux/linux/", 
-            "text": "voir les ports ouverts :\n\n\n$ sudo netstat -tulpn\n\n\n\n\n\n\n\nzipper le contenu d'un r\u00e9pertoire\n\n\n$ zip -r nom_du_fichier.zip *", 
+            "text": "R\u00e9seaux\n\n\n\n\nvoir les ports ouverts :\n$ sudo netstat -tulpn\n\n\n\n\n\n\n\nSystemd\n\n\n\n\n\n\nliste les services\n\n\n$ systemctl\n\n\n\n\n\n\n\nd\u00e9marre un service\n\n\n$ systemctl start exim4\n\n\n\n\n\n\n\narr\u00eate un service\n\n\n$ systemctl stop exim4\n\n\n\n\n\n\n\naffiche le statut d'un service\n\n\n$ systemctl status exim4\n\n\n\n\n\n\n\nactive le service au d\u00e9marrage\n\n\n$ systemctl enable exim4\n\n\n\n\n\n\n\nd\u00e9sactive le service au d\u00e9marrage\n\n\n$ systemctl disable exim4\n\n\n\n\n\n\n\nAutres\n\n\n\n\nzipper le contenu d'un r\u00e9pertoire\n$ zip -r nom_du_fichier.zip *", 
             "title": "Linux"
+        }, 
+        {
+            "location": "/linux/linux/#reseaux", 
+            "text": "voir les ports ouverts : $ sudo netstat -tulpn", 
+            "title": "R\u00e9seaux"
+        }, 
+        {
+            "location": "/linux/linux/#systemd", 
+            "text": "liste les services  $ systemctl    d\u00e9marre un service  $ systemctl start exim4    arr\u00eate un service  $ systemctl stop exim4    affiche le statut d'un service  $ systemctl status exim4    active le service au d\u00e9marrage  $ systemctl enable exim4    d\u00e9sactive le service au d\u00e9marrage  $ systemctl disable exim4", 
+            "title": "Systemd"
+        }, 
+        {
+            "location": "/linux/linux/#autres", 
+            "text": "zipper le contenu d'un r\u00e9pertoire $ zip -r nom_du_fichier.zip *", 
+            "title": "Autres"
         }, 
         {
             "location": "/sql/sql/", 

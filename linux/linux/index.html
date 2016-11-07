@@ -156,19 +156,61 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
+        <li class="main active"><a href="#reseaux">Réseaux</a></li>
+        
+    
+        <li class="main "><a href="#systemd">Systemd</a></li>
+        
+    
+        <li class="main "><a href="#autres">Autres</a></li>
+        
+    
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
+<h2 id="reseaux">Réseaux</h2>
+<ul>
+<li>voir les ports ouverts :<pre><code>$ sudo netstat -tulpn
+</code></pre>
+</li>
+</ul>
+<h2 id="systemd">Systemd</h2>
 <ul>
 <li>
-<p>voir les ports ouverts :</p>
-<pre><code>$ sudo netstat -tulpn
+<p>liste les services</p>
+<pre><code>$ systemctl
 </code></pre>
 </li>
 <li>
-<p>zipper le contenu d'un répertoire</p>
-<pre><code>$ zip -r nom_du_fichier.zip *
+<p>démarre un service</p>
+<pre><code>$ systemctl start exim4
+</code></pre>
+</li>
+<li>
+<p>arrête un service</p>
+<pre><code>$ systemctl stop exim4
+</code></pre>
+</li>
+<li>
+<p>affiche le statut d'un service</p>
+<pre><code>$ systemctl status exim4
+</code></pre>
+</li>
+<li>
+<p>active le service au démarrage</p>
+<pre><code>$ systemctl enable exim4
+</code></pre>
+</li>
+<li>
+<p>désactive le service au démarrage</p>
+<pre><code>$ systemctl disable exim4
+</code></pre>
+</li>
+</ul>
+<h2 id="autres">Autres</h2>
+<ul>
+<li>zipper le contenu d'un répertoire<pre><code>$ zip -r nom_du_fichier.zip *
 </code></pre>
 </li>
 </ul></div>
