@@ -156,15 +156,34 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
+        <li class="main active"><a href="#depot">Dépôt</a></li>
+        
+    
+        <li class="main "><a href="#branches">Branches</a></li>
+        
+    
+        <li class="main "><a href="#commits">Commits</a></li>
+        
+    
+        <li class="main "><a href="#stash">Stash</a></li>
+        
+    
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
+<h3 id="depot">Dépôt</h3>
+<ul>
+<li>Ajouter/mettre à jour l'url d'un dépôt sur origin<pre><code>$ git remote add origin &lt;https://new_url/depot.git&gt;
+$ git remote set-url origin &lt;https://new_url/depot.git&gt;
+</code></pre>
+</li>
+</ul>
+<h3 id="branches">Branches</h3>
 <ul>
 <li>
-<p>Ajouter/mettre à jour l'url d'un dépôt sur origin</p>
-<pre><code>$ git remote add origin &lt;https://new_url/depot.git&gt;
-$ git remote set-url origin &lt;https://new_url/depot.git&gt;
+<p>Créer et de placer sur une branche</p>
+<pre><code>$ git checkout -b &lt;branch_name&gt;
 </code></pre>
 </li>
 <li>
@@ -173,6 +192,9 @@ $ git remote set-url origin &lt;https://new_url/depot.git&gt;
 $ git push origin --delete &lt;branch_name&gt;    # supprime la branche distante
 </code></pre>
 </li>
+</ul>
+<h3 id="commits">Commits</h3>
+<ul>
 <li>
 <p>Annuler un merge/commit local</p>
 <pre><code>$ git reflog =&gt; montre les références HEAD
@@ -184,6 +206,19 @@ $ git reset --hard HEAD@{X} =&gt; repositionne le head de la branche sur le comm
 <p>Recherche des commit liés au texte</p>
 <pre><code>[alias] :
 str-search = "!f() { git llg -S $1 --all --source $2; }; f"
+</code></pre>
+</li>
+</ul>
+<h3 id="stash">Stash</h3>
+<ul>
+<li>
+<p>sauvegarder le travail en cours de la branche en cours</p>
+<pre><code>$ git stash save
+</code></pre>
+</li>
+<li>
+<p>rétablir le travail suavegardé sur la branche en cours</p>
+<pre><code>$ git stash pop
 </code></pre>
 </li>
 </ul></div>
