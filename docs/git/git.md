@@ -1,12 +1,22 @@
+### Dépôt
+
 * Ajouter/mettre à jour l'url d'un dépôt sur origin
 
         $ git remote add origin <https://new_url/depot.git>
         $ git remote set-url origin <https://new_url/depot.git>
+        
+### Branches        
+
+* Créer et de placer sur une branche
+
+        $ git checkout -b <branch_name>
 
 * Supprimer une branche
 
         $ git branch -d <branch_name>               # supprime la branche locale
         $ git push origin --delete <branch_name>    # supprime la branche distante
+
+### Commits
 
 * Annuler un merge/commit local
 
@@ -18,3 +28,14 @@
 
         [alias] :
         str-search = "!f() { git llg -S $1 --all --source $2; }; f"
+
+### Stash
+
+* sauvegarder le travail en cours de la branche en cours
+
+        $ git stash save
+
+* rétablir le travail suavegardé sur la branche en cours
+
+        $ git stash pop
+
