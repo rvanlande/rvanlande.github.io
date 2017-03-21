@@ -3,8 +3,8 @@
 
     
     <url>
-     <loc>None/</loc>
-     <lastmod>2016-12-06</lastmod>
+     <loc>/</loc>
+     <lastmod>2017-03-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -12,24 +12,14 @@
     
         
     <url>
-     <loc>None/docker/docker-compose/</loc>
-     <lastmod>2016-12-06</lastmod>
+     <loc>/docker/docker-compose/</loc>
+     <lastmod>2017-03-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/docker/docker/</loc>
-     <lastmod>2016-12-06</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    
-
-    
-        
-    <url>
-     <loc>None/git/git/</loc>
-     <lastmod>2016-12-06</lastmod>
+     <loc>/docker/docker/</loc>
+     <lastmod>2017-03-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -38,8 +28,8 @@
     
         
     <url>
-     <loc>None/linux/linux/</loc>
-     <lastmod>2016-12-06</lastmod>
+     <loc>/git/git/</loc>
+     <lastmod>2017-03-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -48,8 +38,18 @@
     
         
     <url>
-     <loc>None/sql/sql/</loc>
-     <lastmod>2016-12-06</lastmod>
+     <loc>/linux/linux/</loc>
+     <lastmod>2017-03-21</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>/sql/sql/</loc>
+     <lastmod>2017-03-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
         

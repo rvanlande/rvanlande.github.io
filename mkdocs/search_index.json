@@ -107,7 +107,7 @@
         }, 
         {
             "location": "/linux/linux/", 
-            "text": "R\u00e9seaux\n\n\n\n\nvoir les ports ouverts :\n$ sudo netstat -tulpn\n\n\n\n\n\n\n\nSystemd\n\n\n\n\n\n\nliste les services\n\n\n$ systemctl\n\n\n\n\n\n\n\nd\u00e9marre un service\n\n\n$ systemctl start exim4\n\n\n\n\n\n\n\narr\u00eate un service\n\n\n$ systemctl stop exim4\n\n\n\n\n\n\n\naffiche le statut d'un service\n\n\n$ systemctl status exim4\n\n\n\n\n\n\n\nactive le service au d\u00e9marrage\n\n\n$ systemctl enable exim4\n\n\n\n\n\n\n\nd\u00e9sactive le service au d\u00e9marrage\n\n\n$ systemctl disable exim4\n\n\n\n\n\n\n\nAutres\n\n\n\n\nzipper le contenu d'un r\u00e9pertoire\n$ zip -r nom_du_fichier.zip *", 
+            "text": "R\u00e9seaux\n\n\n\n\nvoir les ports ouverts :\n$ sudo netstat -tulpn\n\n\n\n\n\n\n\nSystemd\n\n\n\n\n\n\nliste les services\n\n\n$ systemctl\n\n\n\n\n\n\n\nd\u00e9marre un service\n\n\n$ systemctl start exim4\n\n\n\n\n\n\n\narr\u00eate un service\n\n\n$ systemctl stop exim4\n\n\n\n\n\n\n\naffiche le statut d'un service\n\n\n$ systemctl status exim4\n\n\n\n\n\n\n\nactive le service au d\u00e9marrage\n\n\n$ systemctl enable exim4\n\n\n\n\n\n\n\nd\u00e9sactive le service au d\u00e9marrage\n\n\n$ systemctl disable exim4\n\n\n\n\n\n\n\ngpg\n\n\n\n\n\n\ng\u00e9n\u00e9ration des cl\u00e9s\n\n\n$ gpg --gen-key\n\n\n\n\n\n\nafficher les cl\u00e9s\n\n\n$ gpg --list-keys\n$ gpg --list-secret-keys\n\n\n\n\n\n\nimporter une cl\u00e9\n\n\n$ gpg --import \n\n\n\n\n\n\nexporter une cl\u00e9 publique\n\n\n$ gpg -a --export \n\n\n\n\n\n\nexporter une cl\u00e9 priv\u00e9e\n\n\n$ gpg -a --export-secret-key \n\n\n\n\n\n\nchiffrer un message\n\n\n$ gpg -a -r \n -e \n\n\n\n\n\n\nd\u00e9chiffrer un message\n\n\n$ gpg -d \n\n\n\n\n\n\nAutres\n\n\n\n\nzipper le contenu d'un r\u00e9pertoire\n$ zip -r nom_du_fichier.zip *", 
             "title": "Linux"
         }, 
         {
@@ -119,6 +119,11 @@
             "location": "/linux/linux/#systemd", 
             "text": "liste les services  $ systemctl    d\u00e9marre un service  $ systemctl start exim4    arr\u00eate un service  $ systemctl stop exim4    affiche le statut d'un service  $ systemctl status exim4    active le service au d\u00e9marrage  $ systemctl enable exim4    d\u00e9sactive le service au d\u00e9marrage  $ systemctl disable exim4", 
             "title": "Systemd"
+        }, 
+        {
+            "location": "/linux/linux/#gpg", 
+            "text": "g\u00e9n\u00e9ration des cl\u00e9s  $ gpg --gen-key    afficher les cl\u00e9s  $ gpg --list-keys\n$ gpg --list-secret-keys    importer une cl\u00e9  $ gpg --import     exporter une cl\u00e9 publique  $ gpg -a --export     exporter une cl\u00e9 priv\u00e9e  $ gpg -a --export-secret-key     chiffrer un message  $ gpg -a -r   -e     d\u00e9chiffrer un message  $ gpg -d", 
+            "title": "gpg"
         }, 
         {
             "location": "/linux/linux/#autres", 
