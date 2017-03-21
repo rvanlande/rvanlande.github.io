@@ -165,32 +165,39 @@
 <ul>
 <li>
 <p>génération des clés</p>
-<p>$ gpg --gen-key</p>
+<pre><code>$ gpg --gen-key
+</code></pre>
 </li>
 <li>
 <p>afficher les clés</p>
-<p>$ gpg --list-keys
-$ gpg --list-secret-keys</p>
+<pre><code>$ gpg --list-keys
+$ gpg --list-secret-keys
+</code></pre>
 </li>
 <li>
 <p>importer une clé</p>
-<p>$ gpg --import <key-file></p>
+<pre><code>$ gpg --import &lt;key-file&gt;
+</code></pre>
 </li>
 <li>
 <p>exporter une clé publique</p>
-<p>$ gpg -a --export <id-cle></p>
+<pre><code>$ gpg -a --export &lt;id-cle&gt;
+</code></pre>
 </li>
 <li>
 <p>exporter une clé privée</p>
-<p>$ gpg -a --export-secret-key <id-cle></p>
+<pre><code>$ gpg -a --export-secret-key &lt;id-cle&gt;
+</code></pre>
 </li>
 <li>
 <p>chiffrer un message</p>
-<p>$ gpg -a -r <email> -e <file></p>
+<pre><code>$ gpg -a -r &lt;email&gt; -e &lt;file&gt;
+</code></pre>
 </li>
 <li>
 <p>déchiffrer un message</p>
-<p>$ gpg -d <file></p>
+<pre><code>$ gpg -d &lt;file&gt;
+</code></pre>
 </li>
 </ul>
 <h2 id="autres">Autres</h2>
