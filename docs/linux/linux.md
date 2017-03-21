@@ -34,32 +34,32 @@
 
 * génération des clés
 
-	$ gpg --gen-key
+        $ gpg --gen-key
 
 * afficher les clés
 
-	$ gpg --list-keys
-	$ gpg --list-secret-keys
+        $ gpg --list-keys
+        $ gpg --list-secret-keys
 
 * importer une clé
 
-	$ gpg --import <key-file>
+        $ gpg --import <key-file>
 
 * exporter une clé publique
 
-	$ gpg -a --export <id-cle>
+        $ gpg -a --export <id-cle>
 
 * exporter une clé privée
 
-	$ gpg -a --export-secret-key <id-cle>
+        $ gpg -a --export-secret-key <id-cle>
 
 * chiffrer un message
 
-	$ gpg -a -r <email> -e <file>
+        $ gpg -a -r <email> -e <file>
 
 * déchiffrer un message
 
-	$ gpg -d <file>
+        $ gpg -d <file>
 
 ## Autres
 
