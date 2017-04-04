@@ -2,7 +2,7 @@
 
 * connect to database
 
-        psql -U rcv ${db_name}
+        psql -U ${user} ${db_name}
 
 * dsiplay result in page mode
 
@@ -22,14 +22,14 @@
         
 * drop database
 
-        dropdb -U rcv 'costespro4timeline'
+        dropdb -U rcv ${db_name}
 
 * duplicate database
 
         $ su -
         $ su - postgres   // connect as postgre user
         $ psql            // conect to database
-        ~=> CREATE DATABASE costespro4timeline WITH TEMPLATE costespro OWNER rcv;
+        ~=> CREATE DATABASE ${db_name2} WITH TEMPLATE ${db_name1} OWNER rcv;
 
 * sessions connected to database
 
@@ -39,7 +39,7 @@
 
         select table_name, column_name
         from information_schema.columns
-        where column_name like '%depose%' order by table_name, column_name;
+        where column_name like '%xxx%' order by table_name, column_name;
 
 * display enumeration type
 
@@ -47,4 +47,4 @@
         from pg_type t join pg_enum e
         on t.oid = e.enumtypid join pg_catalog.pg_namespace n
         on n.oid = t.typnamespace 
-        where t.typname = 'email_params_type';
+        where t.typname = ${type};
