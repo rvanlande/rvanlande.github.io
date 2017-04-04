@@ -123,7 +123,7 @@
 <ul>
 <li>
 <p>connect to database</p>
-<pre><code>psql -U rcv ${db_name}
+<pre><code>psql -U ${user} ${db_name}
 </code></pre>
 </li>
 <li>
@@ -148,7 +148,7 @@
 </li>
 <li>
 <p>drop database</p>
-<pre><code>dropdb -U rcv 'costespro4timeline'
+<pre><code>dropdb -U rcv ${db_name}
 </code></pre>
 </li>
 <li>
@@ -156,7 +156,7 @@
 <pre><code>$ su -
 $ su - postgres   // connect as postgre user
 $ psql            // conect to database
-~=&gt; CREATE DATABASE costespro4timeline WITH TEMPLATE costespro OWNER rcv;
+~=&gt; CREATE DATABASE ${db_name2} WITH TEMPLATE ${db_name1} OWNER rcv;
 </code></pre>
 </li>
 <li>
@@ -168,7 +168,7 @@ $ psql            // conect to database
 <p>get information about database</p>
 <pre><code>select table_name, column_name
 from information_schema.columns
-where column_name like '%depose%' order by table_name, column_name;
+where column_name like '%xxx%' order by table_name, column_name;
 </code></pre>
 </li>
 <li>
@@ -177,7 +177,7 @@ where column_name like '%depose%' order by table_name, column_name;
 from pg_type t join pg_enum e
 on t.oid = e.enumtypid join pg_catalog.pg_namespace n
 on n.oid = t.typnamespace 
-where t.typname = 'email_params_type';
+where t.typname = ${type};
 </code></pre>
 </li>
 </ul></div>
