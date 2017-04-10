@@ -10,15 +10,25 @@
     
 
     
-        
     <url>
-     <loc>/docker/docker-compose/</loc>
+     <loc>/about/</loc>
      <lastmod>2017-04-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
+    
+
+    
+    <url>
+     <loc>/articles/</loc>
+     <lastmod>2017-04-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
         
     <url>
-     <loc>/docker/docker/</loc>
+     <loc>/projets/running_arena/</loc>
      <lastmod>2017-04-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -28,28 +38,32 @@
     
         
     <url>
-     <loc>/git/git/</loc>
+     <loc>/tips/git/</loc>
      <lastmod>2017-04-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
-    
-
-    
-        
     <url>
-     <loc>/linux/linux/</loc>
+     <loc>/tips/linux/</loc>
      <lastmod>2017-04-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
-    
-
-    
+    <url>
+     <loc>/tips/mkdocs/</loc>
+     <lastmod>2017-04-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
         
     <url>
-     <loc>/sql/sql/</loc>
+     <loc>/tips/sql/</loc>
      <lastmod>2017-04-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc></loc>
+     <lastmod></lastmod>
      <changefreq>daily</changefreq>
     </url>
         

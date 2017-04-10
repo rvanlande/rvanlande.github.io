@@ -2,143 +2,163 @@
     "docs": [
         {
             "location": "/", 
-            "text": "Introduction\n\n\nCes pages ont pour objectif de rassembler toutes les notes/codes/commandes de diff\u00e9rents outils informatiques.\n\n\nInstallation\n\n\n\n\nPr\u00e9-requis :\n\n\n\n\nInstaller mkdocs\n\n\n\n\nInstallation\n$ git clone github.com/rvanlande/rvanlande.github.io\n$ git checkout mkdocs\n\n\n\n\n\n\n\nMise \u00e0 jour de la documentation\n\n\n\n\n\n\nLa documentation se trouve dans le r\u00e9pertoire \nrvanlande.github.io/docs\n\n\n\n\n\n\nsauvegarde des mises \u00e0 jour dans git\n\n\n$ git commit -am 'update docs'\n$ git push origin mkdocs\n\n\n\n\n\n\n\nD\u00e9ploiement de la documentation\n\n\n$ mkdocs gh-deploy --remote-branch master", 
+            "text": "Bienvenue !\n\n\nVous trouverez sur ce site :\n\n\n\n\ndes trucs et astuces\n\n\ndes articles\n\n\ndes projets\n\n\nune pr\u00e9sentation personnelle\n\n\n\n\nBonne navigation !", 
             "title": "Home"
         }, 
         {
-            "location": "/#introduction", 
-            "text": "Ces pages ont pour objectif de rassembler toutes les notes/codes/commandes de diff\u00e9rents outils informatiques.", 
-            "title": "Introduction"
-        }, 
-        {
-            "location": "/#installation", 
-            "text": "Pr\u00e9-requis :   Installer mkdocs   Installation $ git clone github.com/rvanlande/rvanlande.github.io\n$ git checkout mkdocs", 
-            "title": "Installation"
-        }, 
-        {
-            "location": "/#mise-a-jour-de-la-documentation", 
-            "text": "La documentation se trouve dans le r\u00e9pertoire  rvanlande.github.io/docs    sauvegarde des mises \u00e0 jour dans git  $ git commit -am 'update docs'\n$ git push origin mkdocs", 
-            "title": "Mise \u00e0 jour de la documentation"
-        }, 
-        {
-            "location": "/#deploiement-de-la-documentation", 
-            "text": "$ mkdocs gh-deploy --remote-branch master", 
-            "title": "D\u00e9ploiement de la documentation"
-        }, 
-        {
-            "location": "/docker/docker-compose/", 
-            "text": "Docker Compose\n\n\nInstallation sur debian\n\n\nInstallation\n\n\nCommandes\n\n\nListe des commandes\n\n\n$ docker-compose up -d =\n construit, recr\u00e9e et attache les conteneurs au service\n$ docker-compose down =\n arr\u00eate les conteneurs et supprime les conteneurs, les r\u00e9seaux et les images cr\u00e9\u00e9es par up\n$ docker-compose start [service] =\n d\u00e9marre le ou les services\n$ docker-compose stop [service] =\n arr\u00eate le ou les services d\u00e9marr\u00e9s par start", 
-            "title": "Docker compose"
-        }, 
-        {
-            "location": "/docker/docker-compose/#docker-compose", 
+            "location": "/about/", 
             "text": "", 
-            "title": "Docker Compose"
+            "title": "About"
         }, 
         {
-            "location": "/docker/docker-compose/#installation-sur-debian", 
-            "text": "Installation", 
-            "title": "Installation sur debian"
+            "location": "/articles/", 
+            "text": "Coming soon !", 
+            "title": "Articles"
         }, 
         {
-            "location": "/docker/docker-compose/#commandes", 
-            "text": "Liste des commandes  $ docker-compose up -d =  construit, recr\u00e9e et attache les conteneurs au service\n$ docker-compose down =  arr\u00eate les conteneurs et supprime les conteneurs, les r\u00e9seaux et les images cr\u00e9\u00e9es par up\n$ docker-compose start [service] =  d\u00e9marre le ou les services\n$ docker-compose stop [service] =  arr\u00eate le ou les services d\u00e9marr\u00e9s par start", 
-            "title": "Commandes"
+            "location": "/projets/running_arena/", 
+            "text": "D\u00e9veloppement d'une application de suivi en temps r\u00e9el de courses \u00e0 pieds.\n\n\nRunning Arena", 
+            "title": "Running arena"
         }, 
         {
-            "location": "/docker/docker/", 
-            "text": "Docker Engine\n\n\nDocker\n\n\nDocker Overview\n\n\nDocker Commands\n  \n\n\nInstallation sur debian\n\n\nInstallation\n\n\nLe r\u00e9pertoire contenant tous les donn\u00e9es docker (image, conteneur,...) se trouve dans le r\u00e9pertoire suivant :  \n\n\n/var/lib/docker\n\n\n\nQuelques commandes\n\n\nImages\n\n\n$ docker images    =\n Liste les images docker install\u00e9es\n$ docker rmi -f \nid_image\n    =\n force la suppression d'une image par son identifiant\n$ docker build -t \nnom_image\n:\ntag\n  \npath_dockerfile\n  =\n cr\u00e9e une image bas\u00e9e sur le Dockerfile avec un nom et un tag\n$ docker rmi $(docker images -q -f dangling=true) =\n supprime des images temporaires non utilis\u00e9es\n\n\n\nNOTES :\n\n\n\n\ndocker build : ex\u00e9cute toutes les commandes RUN du script dockerfile\n\n\ndocker run : ex\u00e9cute toutes les commandes CMD du script dockerfile\n\n\n\n\nConteneur\n\n\n\n\ncr\u00e9ation et ex\u00e9cution d'un conteneur\n :\n$ docker run --rm --name \nmon_conteneur\n --net=\"host\" -v \nabsolute_path_host\n:\nabsolute_path_conteneur\n \nimage_name\n\n\n\n\n\n\n\n\nCette commande cr\u00e9\u00e9e un conteneur 'mon_conteneur' bas\u00e9 sur l'image 'image_name' et le d\u00e9marre avec les options suivantes :  \n\n\n--rm : supprime le conteneur \u00e0 la fin de son ex\u00e9cution\n\n--name : d\u00e9finit un nom pour le conteneur\n\n--net=\"host\" : d\u00e9finit l'interface r\u00e9seau du conteneur avec celle de la machine h\u00f4te\n\n-v HOSTDIR:CONTAINERDIR : partage d'un r\u00e9pertoire entre la machine h\u00f4te et le conteneur  \n\n\n\n\n\n\nCr\u00e9ation et ex\u00e9cution d'un conteneur en ouvrant un terminal\n\n\n$ docker run -it \nimage\n bin/bash\n\n\n\n\n\n\n\nD\u00e9marrer un conteneur existant\n : \n\n\n$ docker start \ncontainer_id\n\n\n\n\n\n\n\n\nAttacher un terminal \u00e0 un conteneur en cours d'ex\u00e9cution\n : \n\n\n$ docker exec -it \ncontainer_id\n bin/bash\n\n\n\n\n\n\n\nLister tous les conteneurs actifs et inactifs\n :\n\n\n$ docker ps\n$ docker ps -a\n\n\n\n\n\n\n\nSupprimer tous les conteneurs et leur volume associ\u00e9\n : \n\n\n$ docker ps -aq | xargs docker rm -v\n\n\n\n\n\n\n\nNOTES :\n\n\n\n\nImage et conteneur\n :\n\n\n\n\nUne image peut \u00eatre consid\u00e9r\u00e9 comme immuable. D\u00e9marrer un ou plusieurs conteneurs \u00e0 partir de cette image ne changera pas l'image. On peut comparer cela \u00e0 une image virtuelle originale d'une machine virtuelle.  \n\n\nUn conteneur d\u00e9marre l'image et ajoute une couche au-dessus de celle-ci. Cette couche stocke tous les changements du conteneur (cr\u00e9ation/modification/supression de fichiers ...).\n\n\nVolume\n\n\nListe des volumes orphelins\n\n\n$ docker volume ls -qf dangling=true\n\n\n\nSuppression des volumes orphelins\n\n\n$ docker volume rm $(docker volume ls -qf dangling=true)", 
-            "title": "Docker"
-        }, 
-        {
-            "location": "/docker/docker/#docker-engine", 
-            "text": "Docker  Docker Overview  Docker Commands", 
-            "title": "Docker Engine"
-        }, 
-        {
-            "location": "/docker/docker/#installation-sur-debian", 
-            "text": "Installation  Le r\u00e9pertoire contenant tous les donn\u00e9es docker (image, conteneur,...) se trouve dans le r\u00e9pertoire suivant :    /var/lib/docker", 
-            "title": "Installation sur debian"
-        }, 
-        {
-            "location": "/docker/docker/#quelques-commandes", 
-            "text": "", 
-            "title": "Quelques commandes"
-        }, 
-        {
-            "location": "/docker/docker/#images", 
-            "text": "$ docker images    =  Liste les images docker install\u00e9es\n$ docker rmi -f  id_image     =  force la suppression d'une image par son identifiant\n$ docker build -t  nom_image : tag    path_dockerfile   =  cr\u00e9e une image bas\u00e9e sur le Dockerfile avec un nom et un tag\n$ docker rmi $(docker images -q -f dangling=true) =  supprime des images temporaires non utilis\u00e9es  NOTES :   docker build : ex\u00e9cute toutes les commandes RUN du script dockerfile  docker run : ex\u00e9cute toutes les commandes CMD du script dockerfile", 
-            "title": "Images"
-        }, 
-        {
-            "location": "/docker/docker/#conteneur", 
-            "text": "cr\u00e9ation et ex\u00e9cution d'un conteneur  : $ docker run --rm --name  mon_conteneur  --net=\"host\" -v  absolute_path_host : absolute_path_conteneur   image_name     Cette commande cr\u00e9\u00e9e un conteneur 'mon_conteneur' bas\u00e9 sur l'image 'image_name' et le d\u00e9marre avec les options suivantes :    --rm : supprime le conteneur \u00e0 la fin de son ex\u00e9cution \n--name : d\u00e9finit un nom pour le conteneur \n--net=\"host\" : d\u00e9finit l'interface r\u00e9seau du conteneur avec celle de la machine h\u00f4te \n-v HOSTDIR:CONTAINERDIR : partage d'un r\u00e9pertoire entre la machine h\u00f4te et le conteneur      Cr\u00e9ation et ex\u00e9cution d'un conteneur en ouvrant un terminal  $ docker run -it  image  bin/bash    D\u00e9marrer un conteneur existant  :   $ docker start  container_id     Attacher un terminal \u00e0 un conteneur en cours d'ex\u00e9cution  :   $ docker exec -it  container_id  bin/bash    Lister tous les conteneurs actifs et inactifs  :  $ docker ps\n$ docker ps -a    Supprimer tous les conteneurs et leur volume associ\u00e9  :   $ docker ps -aq | xargs docker rm -v    NOTES :   Image et conteneur  :   Une image peut \u00eatre consid\u00e9r\u00e9 comme immuable. D\u00e9marrer un ou plusieurs conteneurs \u00e0 partir de cette image ne changera pas l'image. On peut comparer cela \u00e0 une image virtuelle originale d'une machine virtuelle.    Un conteneur d\u00e9marre l'image et ajoute une couche au-dessus de celle-ci. Cette couche stocke tous les changements du conteneur (cr\u00e9ation/modification/supression de fichiers ...).", 
-            "title": "Conteneur"
-        }, 
-        {
-            "location": "/docker/docker/#volume", 
-            "text": "Liste des volumes orphelins  $ docker volume ls -qf dangling=true  Suppression des volumes orphelins  $ docker volume rm $(docker volume ls -qf dangling=true)", 
-            "title": "Volume"
-        }, 
-        {
-            "location": "/git/git/", 
-            "text": "D\u00e9p\u00f4t\n\n\n\n\nAjouter/mettre \u00e0 jour l'url d'un d\u00e9p\u00f4t sur origin\n$ git remote add origin \nhttps://new_url/depot.git\n\n$ git remote set-url origin \nhttps://new_url/depot.git\n\n\n\n\n\n\n\n\nBranches\n\n\n\n\n\n\nCr\u00e9er et de placer sur une branche\n\n\n$ git checkout -b \nbranch_name\n\n\n\n\n\n\n\n\nSupprimer une branche\n\n\n$ git branch -d \nbranch_name\n               # supprime la branche locale\n$ git push origin --delete \nbranch_name\n    # supprime la branche distante\n\n\n\n\n\n\n\nCommits\n\n\n\n\n\n\nAnnuler un merge/commit local\n\n\n$ git reflog =\n montre les r\u00e9f\u00e9rences HEAD\n$ git reset --hard HEAD@{X} =\n repositionne le head de la branche sur le commit correspondant  \n/!\\ Attention la commande annule toutes les modifications en cours de la branches stagged + commited\n\n\n\n\n\n\n\nRecherche des commit li\u00e9s au texte\n\n\n[alias] :\nstr-search = \"!f() { git llg -S $1 --all --source $2; }; f\"\n\n\n\n\n\n\n\nStash\n\n\n\n\n\n\nsauvegarder le travail en cours de la branche en cours\n\n\n$ git stash save\n\n\n\n\n\n\n\nr\u00e9tablir le travail suavegard\u00e9 sur la branche en cours\n\n\n$ git stash pop", 
+            "location": "/tips/git/", 
+            "text": "D\u00e9p\u00f4t\n\n\n\n\nAjouter/mettre \u00e0 jour l'url d'un d\u00e9p\u00f4t sur origin\n$ git remote add origin \nhttps://new_url/depot.git\n\n$ git remote set-url origin \nhttps://new_url/depot.git\n\n\n\n\n\n\n\n\n\n\nBranches\n\n\n\n\n\n\nCr\u00e9er et de placer sur une branche\n\n\n$ git checkout -b \nbranch_name\n\n\n\n\n\n\n\n\n\n\nSupprimer une branche\n\n\n$ git branch -d \nbranch_name\n               \n# supprime la branche locale\n\n$ git push origin --delete \nbranch_name\n    \n# supprime la branche distante\n\n\n\n\n\n\n\n\n\n\nCommits\n\n\n\n\n\n\nAnnuler un merge/commit local\n\n\n$ git \nreflog\n \n=\n montre les r\u00e9f\u00e9rences HEAD\n$ git reset --hard HEAD@\n{\nX\n}\n \n=\n repositionne le head de la branche sur le commit correspondant  \n/!\n\\ \nAttention la commande annule toutes les modifications en cours de la branches stagged + commited\n\n\n\n\n\n\n\n\n\nRecherche des commit li\u00e9s au texte\n\n\n[alias] :\nstr-search = \n!f() { git llg -S $1 --all --source $2; }; f\n\n\n\n\n\n\n\n\n\n\nStash\n\n\n\n\n\n\nsauvegarder le travail en cours de la branche en cours\n\n\n$ git stash save\n\n\n\n\n\n\n\n\n\nr\u00e9tablir le travail suavegard\u00e9 sur la branche en cours\n\n\n$ git stash pop", 
             "title": "Git"
         }, 
         {
-            "location": "/git/git/#depot", 
+            "location": "/tips/git/#depot", 
             "text": "Ajouter/mettre \u00e0 jour l'url d'un d\u00e9p\u00f4t sur origin $ git remote add origin  https://new_url/depot.git \n$ git remote set-url origin  https://new_url/depot.git", 
             "title": "D\u00e9p\u00f4t"
         }, 
         {
-            "location": "/git/git/#branches", 
-            "text": "Cr\u00e9er et de placer sur une branche  $ git checkout -b  branch_name     Supprimer une branche  $ git branch -d  branch_name                # supprime la branche locale\n$ git push origin --delete  branch_name     # supprime la branche distante", 
+            "location": "/tips/git/#branches", 
+            "text": "Cr\u00e9er et de placer sur une branche  $ git checkout -b  branch_name     Supprimer une branche  $ git branch -d  branch_name                 # supprime la branche locale \n$ git push origin --delete  branch_name      # supprime la branche distante", 
             "title": "Branches"
         }, 
         {
-            "location": "/git/git/#commits", 
-            "text": "Annuler un merge/commit local  $ git reflog =  montre les r\u00e9f\u00e9rences HEAD\n$ git reset --hard HEAD@{X} =  repositionne le head de la branche sur le commit correspondant  \n/!\\ Attention la commande annule toutes les modifications en cours de la branches stagged + commited    Recherche des commit li\u00e9s au texte  [alias] :\nstr-search = \"!f() { git llg -S $1 --all --source $2; }; f\"", 
+            "location": "/tips/git/#commits", 
+            "text": "Annuler un merge/commit local  $ git  reflog   =  montre les r\u00e9f\u00e9rences HEAD\n$ git reset --hard HEAD@ { X }   =  repositionne le head de la branche sur le commit correspondant  \n/! \\  Attention la commande annule toutes les modifications en cours de la branches stagged + commited    Recherche des commit li\u00e9s au texte  [alias] :\nstr-search =  !f() { git llg -S $1 --all --source $2; }; f", 
             "title": "Commits"
         }, 
         {
-            "location": "/git/git/#stash", 
+            "location": "/tips/git/#stash", 
             "text": "sauvegarder le travail en cours de la branche en cours  $ git stash save    r\u00e9tablir le travail suavegard\u00e9 sur la branche en cours  $ git stash pop", 
             "title": "Stash"
         }, 
         {
-            "location": "/linux/linux/", 
-            "text": "R\u00e9seaux\n\n\n\n\nvoir les ports ouverts :\n$ sudo netstat -tulpn\n\n\n\n\n\n\n\nSystemd\n\n\n\n\n\n\nliste les services\n\n\n$ systemctl\n\n\n\n\n\n\n\nd\u00e9marre un service\n\n\n$ systemctl start exim4\n\n\n\n\n\n\n\narr\u00eate un service\n\n\n$ systemctl stop exim4\n\n\n\n\n\n\n\naffiche le statut d'un service\n\n\n$ systemctl status exim4\n\n\n\n\n\n\n\nactive le service au d\u00e9marrage\n\n\n$ systemctl enable exim4\n\n\n\n\n\n\n\nd\u00e9sactive le service au d\u00e9marrage\n\n\n$ systemctl disable exim4\n\n\n\n\n\n\n\ngpg\n\n\n\n\n\n\ng\u00e9n\u00e9ration des cl\u00e9s\n\n\n$ gpg --gen-key\n\n\n\n\n\n\n\nafficher les cl\u00e9s\n\n\n$ gpg --list-keys\n$ gpg --list-secret-keys\n\n\n\n\n\n\n\nimporter une cl\u00e9\n\n\n$ gpg --import \nkey-file\n\n\n\n\n\n\n\n\nexporter une cl\u00e9 publique\n\n\n$ gpg -a --export \nid-cle\n\n\n\n\n\n\n\n\nexporter une cl\u00e9 priv\u00e9e\n\n\n$ gpg -a --export-secret-key \nid-cle\n\n\n\n\n\n\n\n\nchiffrer un message\n\n\n$ gpg -a -r \nemail\n -e \nfile\n\n\n\n\n\n\n\n\nd\u00e9chiffrer un message\n\n\n$ gpg -d \nfile\n\n\n\n\n\n\n\n\nAutres\n\n\n\n\nzipper le contenu d'un r\u00e9pertoire\n$ zip -r nom_du_fichier.zip *", 
+            "location": "/tips/linux/", 
+            "text": "R\u00e9seaux\n\n\n\n\nvoir les ports ouverts :\n$ sudo netstat -tulpn\n\n\n\n\n\n\n\n\n\nSystemd\n\n\n\n\n\n\nliste les services\n\n\n$ systemctl\n\n\n\n\n\n\n\n\n\nd\u00e9marre un service\n\n\n$ systemctl start exim4\n\n\n\n\n\n\n\n\n\narr\u00eate un service\n\n\n$ systemctl stop exim4\n\n\n\n\n\n\n\n\n\naffiche le statut d'un service\n\n\n$ systemctl status exim4\n\n\n\n\n\n\n\n\n\nactive le service au d\u00e9marrage\n\n\n$ systemctl \nenable\n exim4\n\n\n\n\n\n\n\n\n\nd\u00e9sactive le service au d\u00e9marrage\n\n\n$ systemctl disable exim4\n\n\n\n\n\n\n\n\n\ngpg\n\n\n\n\n\n\ng\u00e9n\u00e9ration des cl\u00e9s\n\n\n$ gpg --gen-key\n\n\n\n\n\n\n\n\n\nafficher les cl\u00e9s\n\n\n$ gpg --list-keys\n$ gpg --list-secret-keys\n\n\n\n\n\n\n\n\n\nimporter une cl\u00e9\n\n\n$\n \ngpg\n \n--\nimport\n \nkey\n-\nfile\n\n\n\n\n\n\n\n\n\n\nexporter une cl\u00e9 publique\n\n\n$ gpg -a --export \nid-cle\n\n\n\n\n\n\n\n\n\n\nexporter une cl\u00e9 priv\u00e9e\n\n\n$ gpg -a --export-secret-key \nid-cle\n\n\n\n\n\n\n\n\n\n\nchiffrer un message\n\n\n$ gpg -a -r \nemail\n -e \nfile\n\n\n\n\n\n\n\n\n\n\nd\u00e9chiffrer un message\n\n\n$ gpg -d \nfile\n\n\n\n\n\n\n\n\n\n\nAutres\n\n\n\n\nzipper le contenu d'un r\u00e9pertoire\n$ zip -r nom_du_fichier.zip *", 
             "title": "Linux"
         }, 
         {
-            "location": "/linux/linux/#reseaux", 
+            "location": "/tips/linux/#reseaux", 
             "text": "voir les ports ouverts : $ sudo netstat -tulpn", 
             "title": "R\u00e9seaux"
         }, 
         {
-            "location": "/linux/linux/#systemd", 
-            "text": "liste les services  $ systemctl    d\u00e9marre un service  $ systemctl start exim4    arr\u00eate un service  $ systemctl stop exim4    affiche le statut d'un service  $ systemctl status exim4    active le service au d\u00e9marrage  $ systemctl enable exim4    d\u00e9sactive le service au d\u00e9marrage  $ systemctl disable exim4", 
+            "location": "/tips/linux/#systemd", 
+            "text": "liste les services  $ systemctl    d\u00e9marre un service  $ systemctl start exim4    arr\u00eate un service  $ systemctl stop exim4    affiche le statut d'un service  $ systemctl status exim4    active le service au d\u00e9marrage  $ systemctl  enable  exim4    d\u00e9sactive le service au d\u00e9marrage  $ systemctl disable exim4", 
             "title": "Systemd"
         }, 
         {
-            "location": "/linux/linux/#gpg", 
-            "text": "g\u00e9n\u00e9ration des cl\u00e9s  $ gpg --gen-key    afficher les cl\u00e9s  $ gpg --list-keys\n$ gpg --list-secret-keys    importer une cl\u00e9  $ gpg --import  key-file     exporter une cl\u00e9 publique  $ gpg -a --export  id-cle     exporter une cl\u00e9 priv\u00e9e  $ gpg -a --export-secret-key  id-cle     chiffrer un message  $ gpg -a -r  email  -e  file     d\u00e9chiffrer un message  $ gpg -d  file", 
+            "location": "/tips/linux/#gpg", 
+            "text": "g\u00e9n\u00e9ration des cl\u00e9s  $ gpg --gen-key    afficher les cl\u00e9s  $ gpg --list-keys\n$ gpg --list-secret-keys    importer une cl\u00e9  $   gpg   -- import   key - file     exporter une cl\u00e9 publique  $ gpg -a --export  id-cle     exporter une cl\u00e9 priv\u00e9e  $ gpg -a --export-secret-key  id-cle     chiffrer un message  $ gpg -a -r  email  -e  file     d\u00e9chiffrer un message  $ gpg -d  file", 
             "title": "gpg"
         }, 
         {
-            "location": "/linux/linux/#autres", 
+            "location": "/tips/linux/#autres", 
             "text": "zipper le contenu d'un r\u00e9pertoire $ zip -r nom_du_fichier.zip *", 
             "title": "Autres"
         }, 
         {
-            "location": "/sql/sql/", 
-            "text": "PostgreSql\n\n\n\n\n\n\nconnect to database\n\n\npsql -U ${user} ${db_name}\n\n\n\n\n\n\n\ndsiplay result in page mode\n\n\n\\pset pager on\n\n\n\n\n\n\n\nchange database\n\n\n\\c \nother_db\n\n\n\n\n\n\n\n\nsave database\n\n\npg_dump -Fc ${db_name} \n ${dump_name}.dmp\n\n\n\n\n\n\n\nrestore database\n\n\npg_restore -d ${db_name} ${dump_name}.dmp\n\n\n\n\n\n\n\ndrop database\n\n\ndropdb -U rcv ${db_name}\n\n\n\n\n\n\n\nduplicate database\n\n\n$ su -\n$ su - postgres   // connect as postgre user\n$ psql            // conect to database\n~=\n CREATE DATABASE ${db_name2} WITH TEMPLATE ${db_name1} OWNER rcv;\n\n\n\n\n\n\n\nsessions connected to database\n\n\nselect * from pg_stat_activity;\n\n\n\n\n\n\n\nget information about database\n\n\nselect table_name, column_name\nfrom information_schema.columns\nwhere column_name like '%xxx%' order by table_name, column_name;\n\n\n\n\n\n\n\ndisplay enumeration type\n\n\nselect n.nspname as enum_schema, t.typname as enum_name, e.enumlabel as enum_value \nfrom pg_type t join pg_enum e\non t.oid = e.enumtypid join pg_catalog.pg_namespace n\non n.oid = t.typnamespace \nwhere t.typname = ${type};", 
+            "location": "/tips/mkdocs/", 
+            "text": "Introduction\n\n\nCes pages ont pour objectif de rassembler toutes les notes/codes/commandes de diff\u00e9rents outils informatiques.\n\n\nInstallation\n\n\n\n\nPr\u00e9-requis :\n\n\n\n\nInstaller mkdocs\n\n\n\n\nInstallation\n\n\n\n\n$ git clone github.com/rvanlande/rvanlande.github.io\n$ git checkout mkdocs\n\n\n\n\n\nMise \u00e0 jour de la documentation\n\n\n\n\n\n\nLa documentation se trouve dans le r\u00e9pertoire \nrvanlande.github.io/docs\n\n\n\n\n\n\nsauvegarde des mises \u00e0 jour dans git\n\n\n$ git commit -am \nupdate docs\n\n$ git push origin mkdocs\n\n\n\n\n\n\n\n\n\nD\u00e9ploiement de la documentation\n\n\n$ mkdocs gh-deploy --remote-branch master", 
+            "title": "Mkdocs"
+        }, 
+        {
+            "location": "/tips/mkdocs/#introduction", 
+            "text": "Ces pages ont pour objectif de rassembler toutes les notes/codes/commandes de diff\u00e9rents outils informatiques.", 
+            "title": "Introduction"
+        }, 
+        {
+            "location": "/tips/mkdocs/#installation", 
+            "text": "Pr\u00e9-requis :   Installer mkdocs   Installation   $ git clone github.com/rvanlande/rvanlande.github.io\n$ git checkout mkdocs", 
+            "title": "Installation"
+        }, 
+        {
+            "location": "/tips/mkdocs/#mise-a-jour-de-la-documentation", 
+            "text": "La documentation se trouve dans le r\u00e9pertoire  rvanlande.github.io/docs    sauvegarde des mises \u00e0 jour dans git  $ git commit -am  update docs \n$ git push origin mkdocs", 
+            "title": "Mise \u00e0 jour de la documentation"
+        }, 
+        {
+            "location": "/tips/mkdocs/#deploiement-de-la-documentation", 
+            "text": "$ mkdocs gh-deploy --remote-branch master", 
+            "title": "D\u00e9ploiement de la documentation"
+        }, 
+        {
+            "location": "/tips/sql/", 
+            "text": "PostgreSql\n\n\n\n\n\n\nconnect to database\n\n\npsql -U \n${\nuser\n}\n \n${\ndb_name\n}\n\n\n\n\n\n\n\n\n\n\ndsiplay result in page mode\n\n\n\\pset pager on\n\n\n\n\n\n\n\n\n\nchange database\n\n\n\\c \nother_db\n\n\n\n\n\n\n\n\n\n\nsave database\n\n\npg_dump -Fc \n${\ndb_name\n}\n \n \n${\ndump_name\n}\n.dmp\n\n\n\n\n\n\n\n\n\nrestore database\n\n\npg_restore -d \n${\ndb_name\n}\n \n${\ndump_name\n}\n.dmp\n\n\n\n\n\n\n\n\n\ndrop database\n\n\ndropdb -U rcv \n${\ndb_name\n}\n\n\n\n\n\n\n\n\n\n\nduplicate database\n\n\n$ su -\n$ su - postgres   // connect as postgre user\n$ psql            // conect to database\n~\n=\n CREATE DATABASE \n${\ndb_name2\n}\n WITH TEMPLATE \n${\ndb_name1\n}\n OWNER rcv\n;\n\n\n\n\n\n\n\n\n\n\nsessions connected to database\n\n\nselect * from pg_stat_activity;\n\n\n\n\n\n\n\n\n\nget information about database\n\n\nselect table_name, column_name\nfrom information_schema.columns\nwhere column_name like \n%xxx%\n order by table_name, column_name;\n\n\n\n\n\n\n\n\n\ndisplay enumeration type\n\n\nselect n.nspname as enum_schema, t.typname as enum_name, e.enumlabel as enum_value \nfrom pg_type t join pg_enum e\non t.oid = e.enumtypid join pg_catalog.pg_namespace n\non n.oid = t.typnamespace \nwhere t.typname = \n${\ntype\n}\n;", 
             "title": "Sql"
         }, 
         {
-            "location": "/sql/sql/#postgresql", 
-            "text": "connect to database  psql -U ${user} ${db_name}    dsiplay result in page mode  \\pset pager on    change database  \\c  other_db     save database  pg_dump -Fc ${db_name}   ${dump_name}.dmp    restore database  pg_restore -d ${db_name} ${dump_name}.dmp    drop database  dropdb -U rcv ${db_name}    duplicate database  $ su -\n$ su - postgres   // connect as postgre user\n$ psql            // conect to database\n~=  CREATE DATABASE ${db_name2} WITH TEMPLATE ${db_name1} OWNER rcv;    sessions connected to database  select * from pg_stat_activity;    get information about database  select table_name, column_name\nfrom information_schema.columns\nwhere column_name like '%xxx%' order by table_name, column_name;    display enumeration type  select n.nspname as enum_schema, t.typname as enum_name, e.enumlabel as enum_value \nfrom pg_type t join pg_enum e\non t.oid = e.enumtypid join pg_catalog.pg_namespace n\non n.oid = t.typnamespace \nwhere t.typname = ${type};", 
+            "location": "/tips/sql/#postgresql", 
+            "text": "connect to database  psql -U  ${ user }   ${ db_name }     dsiplay result in page mode  \\pset pager on    change database  \\c  other_db     save database  pg_dump -Fc  ${ db_name }     ${ dump_name } .dmp    restore database  pg_restore -d  ${ db_name }   ${ dump_name } .dmp    drop database  dropdb -U rcv  ${ db_name }     duplicate database  $ su -\n$ su - postgres   // connect as postgre user\n$ psql            // conect to database\n~ =  CREATE DATABASE  ${ db_name2 }  WITH TEMPLATE  ${ db_name1 }  OWNER rcv ;     sessions connected to database  select * from pg_stat_activity;    get information about database  select table_name, column_name\nfrom information_schema.columns\nwhere column_name like  %xxx%  order by table_name, column_name;    display enumeration type  select n.nspname as enum_schema, t.typname as enum_name, e.enumlabel as enum_value \nfrom pg_type t join pg_enum e\non t.oid = e.enumtypid join pg_catalog.pg_namespace n\non n.oid = t.typnamespace \nwhere t.typname =  ${ type } ;", 
             "title": "PostgreSql"
+        }, 
+        {
+            "location": "/tips/docker/docker-compose/", 
+            "text": "Docker Compose\n\n\nInstallation sur debian\n\n\nInstallation\n\n\nCommandes\n\n\nListe des commandes\n\n\n$ docker-compose up -d \n=\n construit, recr\u00e9e et attache les conteneurs au service\n$ docker-compose \ndown\n \n=\n arr\u00eate les conteneurs et supprime les conteneurs, les r\u00e9seaux et les images cr\u00e9\u00e9es par up\n$ docker-compose start \n[\nservice\n]\n \n=\n d\u00e9marre le ou les services\n$ docker-compose stop \n[\nservice\n]\n \n=\n arr\u00eate le ou les services d\u00e9marr\u00e9s par start", 
+            "title": "Docker compose"
+        }, 
+        {
+            "location": "/tips/docker/docker-compose/#docker-compose", 
+            "text": "", 
+            "title": "Docker Compose"
+        }, 
+        {
+            "location": "/tips/docker/docker-compose/#installation-sur-debian", 
+            "text": "Installation", 
+            "title": "Installation sur debian"
+        }, 
+        {
+            "location": "/tips/docker/docker-compose/#commandes", 
+            "text": "Liste des commandes  $ docker-compose up -d  =  construit, recr\u00e9e et attache les conteneurs au service\n$ docker-compose  down   =  arr\u00eate les conteneurs et supprime les conteneurs, les r\u00e9seaux et les images cr\u00e9\u00e9es par up\n$ docker-compose start  [ service ]   =  d\u00e9marre le ou les services\n$ docker-compose stop  [ service ]   =  arr\u00eate le ou les services d\u00e9marr\u00e9s par start", 
+            "title": "Commandes"
+        }, 
+        {
+            "location": "/tips/docker/docker/", 
+            "text": "Docker Engine\n\n\nDocker\n\n\nDocker Overview\n\n\nDocker Commands\n  \n\n\nInstallation sur debian\n\n\nInstallation\n\n\nLe r\u00e9pertoire contenant tous les donn\u00e9es docker (image, conteneur,...) se trouve dans le r\u00e9pertoire suivant :  \n\n\n/var/lib/docker\n\n\n\n\n\nQuelques commandes\n\n\nImages\n\n\n$ docker \nimages\n    \n=\n Liste les images docker install\u00e9es\n$ docker rmi -f \nid_image\n    \n=\n force la suppression d\nune image par son identifiant\n$ docker build -t \nnom_image\n:\ntag\n  \npath_dockerfile\n  \n=\n cr\u00e9e une image bas\u00e9e sur le Dockerfile avec un nom et un tag\n$ docker rmi \n$(\ndocker images -q -f \ndangling\n=\ntrue\n)\n \n=\n supprime des images temporaires non utilis\u00e9es\n\n\n\n\n\nNOTES :\n\n\n\n\ndocker build : ex\u00e9cute toutes les commandes RUN du script dockerfile\n\n\ndocker run : ex\u00e9cute toutes les commandes CMD du script dockerfile\n\n\n\n\nConteneur\n\n\n\n\ncr\u00e9ation et ex\u00e9cution d'un conteneur\n :\n$ docker run --rm --name \nmon_conteneur\n --net\n=\nhost\n -v \nabsolute_path_host\n:\nabsolute_path_conteneur\n \nimage_name\n\n\n\n\n\n\n\n\n\n\nCette commande cr\u00e9\u00e9e un conteneur 'mon_conteneur' bas\u00e9 sur l'image 'image_name' et le d\u00e9marre avec les options suivantes :  \n\n\n--rm : supprime le conteneur \u00e0 la fin de son ex\u00e9cution\n\n--name : d\u00e9finit un nom pour le conteneur\n\n--net=\"host\" : d\u00e9finit l'interface r\u00e9seau du conteneur avec celle de la machine h\u00f4te\n\n-v HOSTDIR:CONTAINERDIR : partage d'un r\u00e9pertoire entre la machine h\u00f4te et le conteneur  \n\n\n\n\n\n\nCr\u00e9ation et ex\u00e9cution d'un conteneur en ouvrant un terminal\n\n\n$ docker run -it \nimage\n bin/bash\n\n\n\n\n\n\n\n\n\nD\u00e9marrer un conteneur existant\n : \n\n\n$ docker start \ncontainer_id\n\n\n\n\n\n\n\n\n\n\nAttacher un terminal \u00e0 un conteneur en cours d'ex\u00e9cution\n : \n\n\n$ docker \nexec\n -it \ncontainer_id\n bin/bash\n\n\n\n\n\n\n\n\n\nLister tous les conteneurs actifs et inactifs\n :\n\n\n$ docker ps\n$ docker ps -a\n\n\n\n\n\n\n\n\n\nSupprimer tous les conteneurs et leur volume associ\u00e9\n : \n\n\n$ docker ps -aq \n|\n xargs docker rm -v\n\n\n\n\n\n\n\n\n\nNOTES :\n\n\n\n\nImage et conteneur\n :\n\n\n\n\nUne image peut \u00eatre consid\u00e9r\u00e9 comme immuable. D\u00e9marrer un ou plusieurs conteneurs \u00e0 partir de cette image ne changera pas l'image. On peut comparer cela \u00e0 une image virtuelle originale d'une machine virtuelle.  \n\n\nUn conteneur d\u00e9marre l'image et ajoute une couche au-dessus de celle-ci. Cette couche stocke tous les changements du conteneur (cr\u00e9ation/modification/supression de fichiers ...).\n\n\nVolume\n\n\nListe des volumes orphelins\n\n\n$ docker volume ls -qf \ndangling\n=\ntrue\n\n\n\n\n\n\nSuppression des volumes orphelins\n\n\n$ docker volume rm \n$(\ndocker volume ls -qf \ndangling\n=\ntrue\n)", 
+            "title": "Docker"
+        }, 
+        {
+            "location": "/tips/docker/docker/#docker-engine", 
+            "text": "Docker  Docker Overview  Docker Commands", 
+            "title": "Docker Engine"
+        }, 
+        {
+            "location": "/tips/docker/docker/#installation-sur-debian", 
+            "text": "Installation  Le r\u00e9pertoire contenant tous les donn\u00e9es docker (image, conteneur,...) se trouve dans le r\u00e9pertoire suivant :    /var/lib/docker", 
+            "title": "Installation sur debian"
+        }, 
+        {
+            "location": "/tips/docker/docker/#quelques-commandes", 
+            "text": "", 
+            "title": "Quelques commandes"
+        }, 
+        {
+            "location": "/tips/docker/docker/#images", 
+            "text": "$ docker  images      =  Liste les images docker install\u00e9es\n$ docker rmi -f  id_image      =  force la suppression d une image par son identifiant\n$ docker build -t  nom_image : tag    path_dockerfile    =  cr\u00e9e une image bas\u00e9e sur le Dockerfile avec un nom et un tag\n$ docker rmi  $( docker images -q -f  dangling = true )   =  supprime des images temporaires non utilis\u00e9es  NOTES :   docker build : ex\u00e9cute toutes les commandes RUN du script dockerfile  docker run : ex\u00e9cute toutes les commandes CMD du script dockerfile", 
+            "title": "Images"
+        }, 
+        {
+            "location": "/tips/docker/docker/#conteneur", 
+            "text": "cr\u00e9ation et ex\u00e9cution d'un conteneur  : $ docker run --rm --name  mon_conteneur  --net = host  -v  absolute_path_host : absolute_path_conteneur   image_name     Cette commande cr\u00e9\u00e9e un conteneur 'mon_conteneur' bas\u00e9 sur l'image 'image_name' et le d\u00e9marre avec les options suivantes :    --rm : supprime le conteneur \u00e0 la fin de son ex\u00e9cution \n--name : d\u00e9finit un nom pour le conteneur \n--net=\"host\" : d\u00e9finit l'interface r\u00e9seau du conteneur avec celle de la machine h\u00f4te \n-v HOSTDIR:CONTAINERDIR : partage d'un r\u00e9pertoire entre la machine h\u00f4te et le conteneur      Cr\u00e9ation et ex\u00e9cution d'un conteneur en ouvrant un terminal  $ docker run -it  image  bin/bash    D\u00e9marrer un conteneur existant  :   $ docker start  container_id     Attacher un terminal \u00e0 un conteneur en cours d'ex\u00e9cution  :   $ docker  exec  -it  container_id  bin/bash    Lister tous les conteneurs actifs et inactifs  :  $ docker ps\n$ docker ps -a    Supprimer tous les conteneurs et leur volume associ\u00e9  :   $ docker ps -aq  |  xargs docker rm -v    NOTES :   Image et conteneur  :   Une image peut \u00eatre consid\u00e9r\u00e9 comme immuable. D\u00e9marrer un ou plusieurs conteneurs \u00e0 partir de cette image ne changera pas l'image. On peut comparer cela \u00e0 une image virtuelle originale d'une machine virtuelle.    Un conteneur d\u00e9marre l'image et ajoute une couche au-dessus de celle-ci. Cette couche stocke tous les changements du conteneur (cr\u00e9ation/modification/supression de fichiers ...).", 
+            "title": "Conteneur"
+        }, 
+        {
+            "location": "/tips/docker/docker/#volume", 
+            "text": "Liste des volumes orphelins  $ docker volume ls -qf  dangling = true   Suppression des volumes orphelins  $ docker volume rm  $( docker volume ls -qf  dangling = true )", 
+            "title": "Volume"
         }
     ]
 }
