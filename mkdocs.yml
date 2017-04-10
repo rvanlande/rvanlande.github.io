@@ -1,7 +1,14 @@
-site_name: La grotte d'Alibaba
-markdown_extensions: [fenced_code]
+markdown_extensions: 
+  - fontawesome_markdown
+  - admonition
+  - codehilite
+
+site_name: 'rvanlande'
+site_description: 'My personal website'
+site_author: 'Renaud Vanlande'
 
 theme: 'material'
+
 extra:
   palette:
     primary: 'lime'
@@ -9,6 +16,8 @@ extra:
   font:
     text: 'Ubuntu'
     code: 'Ubuntu Mono'
+#    text: 'Roboto'
+#    code: 'Roboto Mono'
   social:
     - type: 'github'
       link: 'https://github.com/rvanlande'
