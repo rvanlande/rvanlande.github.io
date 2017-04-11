@@ -3,7 +3,7 @@ markdown_extensions:
   - admonition
   - codehilite
 
-site_name: 'rvanlande'
+site_name: 'Software Craftsman'
 site_description: 'My personal website'
 site_author: 'Renaud Vanlande'
 
