@@ -2,12 +2,12 @@
     "docs": [
         {
             "location": "/", 
-            "text": "Bienvenue !\n\n\nVous trouverez sur ce site :\n\n\n\n\ndes trucs et astuces\n\n\ndes articles\n\n\ndes projets\n\n\nune pr\u00e9sentation personnelle\n\n\n\n\nBonne navigation !", 
+            "text": "Bienvenue sur mon humble site d\u00e9di\u00e9 \u00e0 tout ce qui touche au d\u00e9veloppement logiciel !\n\n\nVous y trouverez  :\n\n\n\n\ndes trucs et astuces dont je peux me servir comme pense-b\u00eate : \nlinux\n \ngit\n \nsql\n \ndocker\n  \n\n\ndes articles (\u00e0 venir)   \n\n\ndes projets personnels :\n\n\nRunning Arena\n\n\n\n\n\n\nune pr\u00e9sentation personnelle : \nabout me\n\n\n\n\nBonne navigation !", 
             "title": "Home"
         }, 
         {
             "location": "/about/", 
-            "text": "", 
+            "text": "Renaud Vanlande", 
             "title": "About"
         }, 
         {
@@ -72,13 +72,8 @@
         }, 
         {
             "location": "/tips/mkdocs/", 
-            "text": "Introduction\n\n\nCes pages ont pour objectif de rassembler toutes les notes/codes/commandes de diff\u00e9rents outils informatiques.\n\n\nInstallation\n\n\n\n\nPr\u00e9-requis :\n\n\n\n\nInstaller mkdocs\n\n\n\n\nInstallation\n\n\n\n\n$ git clone github.com/rvanlande/rvanlande.github.io\n$ git checkout mkdocs\n\n\n\n\n\nMise \u00e0 jour de la documentation\n\n\n\n\n\n\nLa documentation se trouve dans le r\u00e9pertoire \nrvanlande.github.io/docs\n\n\n\n\n\n\nsauvegarde des mises \u00e0 jour dans git\n\n\n$ git commit -am \nupdate docs\n\n$ git push origin mkdocs\n\n\n\n\n\n\n\n\n\nD\u00e9ploiement de la documentation\n\n\n$ mkdocs gh-deploy --remote-branch master", 
+            "text": "Installation\n\n\n\n\nPr\u00e9-requis :\n\n\n\n\nInstaller mkdocs\n\n\n\n\nInstallation\n\n\n\n\n$ git clone github.com/rvanlande/rvanlande.github.io\n$ git checkout mkdocs\n\n\n\n\n\nMise \u00e0 jour de la documentation\n\n\n\n\n\n\nLa documentation se trouve dans le r\u00e9pertoire \nrvanlande.github.io/docs\n\n\n\n\n\n\nsauvegarde des mises \u00e0 jour dans git\n\n\n$ git commit -am \nupdate docs\n\n$ git push origin mkdocs\n\n\n\n\n\n\n\n\n\nD\u00e9ploiement de la documentation\n\n\n$ mkdocs gh-deploy --remote-branch master", 
             "title": "Mkdocs"
-        }, 
-        {
-            "location": "/tips/mkdocs/#introduction", 
-            "text": "Ces pages ont pour objectif de rassembler toutes les notes/codes/commandes de diff\u00e9rents outils informatiques.", 
-            "title": "Introduction"
         }, 
         {
             "location": "/tips/mkdocs/#installation", 
