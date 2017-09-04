@@ -24,6 +24,14 @@
         $ git reset --hard HEAD@{X} => repositionne le head de la branche sur le commit correspondant  
         /!\ Attention la commande annule toutes les modifications en cours de la branches stagged + commited
 
+
+### Log
+
+* Afficher l'historique d'un fichier avec les modifications
+ 
+        $ git log -p path/to/file
+ 
+
 * Recherche des commit liés au texte
 
         [alias] :
