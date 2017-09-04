@@ -22,7 +22,7 @@
         }, 
         {
             "location": "/tips/git/", 
-            "text": "D\u00e9p\u00f4t\n\n\n\n\nAjouter/mettre \u00e0 jour l'url d'un d\u00e9p\u00f4t sur origin\n$ git remote add origin \nhttps://new_url/depot.git\n\n$ git remote set-url origin \nhttps://new_url/depot.git\n\n\n\n\n\n\n\n\n\n\nBranches\n\n\n\n\n\n\nCr\u00e9er et de placer sur une branche\n\n\n$ git checkout -b \nbranch_name\n\n\n\n\n\n\n\n\n\n\nSupprimer une branche\n\n\n$ git branch -d \nbranch_name\n               \n# supprime la branche locale\n\n$ git push origin --delete \nbranch_name\n    \n# supprime la branche distante\n\n\n\n\n\n\n\n\n\n\nCommits\n\n\n\n\n\n\nAnnuler un merge/commit local\n\n\n$ git \nreflog\n \n=\n montre les r\u00e9f\u00e9rences HEAD\n$ git reset --hard HEAD@\n{\nX\n}\n \n=\n repositionne le head de la branche sur le commit correspondant  \n/!\n\\ \nAttention la commande annule toutes les modifications en cours de la branches stagged + commited\n\n\n\n\n\n\n\n\n\nRecherche des commit li\u00e9s au texte\n\n\n[alias] :\nstr-search = \n!f() { git llg -S $1 --all --source $2; }; f\n\n\n\n\n\n\n\n\n\n\nStash\n\n\n\n\n\n\nsauvegarder le travail en cours de la branche en cours\n\n\n$ git stash save\n\n\n\n\n\n\n\n\n\nr\u00e9tablir le travail suavegard\u00e9 sur la branche en cours\n\n\n$ git stash pop", 
+            "text": "D\u00e9p\u00f4t\n\n\n\n\nAjouter/mettre \u00e0 jour l'url d'un d\u00e9p\u00f4t sur origin\n$ git remote add origin \nhttps://new_url/depot.git\n\n$ git remote set-url origin \nhttps://new_url/depot.git\n\n\n\n\n\n\n\n\n\n\nBranches\n\n\n\n\n\n\nCr\u00e9er et de placer sur une branche\n\n\n$ git checkout -b \nbranch_name\n\n\n\n\n\n\n\n\n\n\nSupprimer une branche\n\n\n$ git branch -d \nbranch_name\n               \n# supprime la branche locale\n\n$ git push origin --delete \nbranch_name\n    \n# supprime la branche distante\n\n\n\n\n\n\n\n\n\n\nCommits\n\n\n\n\nAnnuler un merge/commit local\n$ git \nreflog\n \n=\n montre les r\u00e9f\u00e9rences HEAD\n$ git reset --hard HEAD@\n{\nX\n}\n \n=\n repositionne le head de la branche sur le commit correspondant  \n/!\n\\ \nAttention la commande annule toutes les modifications en cours de la branches stagged + commited\n\n\n\n\n\n\n\n\n\nLog\n\n\n\n\n\n\nAfficher l'historique d'un fichier avec les modifications\n\n\n$ git log -p path/to/file\n\n\n\n\n\n\n\n\n\nRecherche des commit li\u00e9s au texte\n\n\n[alias] :\nstr-search = \n!f() { git llg -S $1 --all --source $2; }; f\n\n\n\n\n\n\n\n\n\n\nStash\n\n\n\n\n\n\nsauvegarder le travail en cours de la branche en cours\n\n\n$ git stash save\n\n\n\n\n\n\n\n\n\nr\u00e9tablir le travail suavegard\u00e9 sur la branche en cours\n\n\n$ git stash pop", 
             "title": "Git"
         }, 
         {
@@ -37,8 +37,13 @@
         }, 
         {
             "location": "/tips/git/#commits", 
-            "text": "Annuler un merge/commit local  $ git  reflog   =  montre les r\u00e9f\u00e9rences HEAD\n$ git reset --hard HEAD@ { X }   =  repositionne le head de la branche sur le commit correspondant  \n/! \\  Attention la commande annule toutes les modifications en cours de la branches stagged + commited    Recherche des commit li\u00e9s au texte  [alias] :\nstr-search =  !f() { git llg -S $1 --all --source $2; }; f", 
+            "text": "Annuler un merge/commit local $ git  reflog   =  montre les r\u00e9f\u00e9rences HEAD\n$ git reset --hard HEAD@ { X }   =  repositionne le head de la branche sur le commit correspondant  \n/! \\  Attention la commande annule toutes les modifications en cours de la branches stagged + commited", 
             "title": "Commits"
+        }, 
+        {
+            "location": "/tips/git/#log", 
+            "text": "Afficher l'historique d'un fichier avec les modifications  $ git log -p path/to/file    Recherche des commit li\u00e9s au texte  [alias] :\nstr-search =  !f() { git llg -S $1 --all --source $2; }; f", 
+            "title": "Log"
         }, 
         {
             "location": "/tips/git/#stash", 
@@ -154,6 +159,11 @@
             "location": "/tips/docker/docker/#volume", 
             "text": "Liste des volumes orphelins  $ docker volume ls -qf  dangling = true   Suppression des volumes orphelins  $ docker volume rm  $( docker volume ls -qf  dangling = true )", 
             "title": "Volume"
+        }, 
+        {
+            "location": "/tips/linux/mc/", 
+            "text": "----- Esc -----\nQuick change directory: Esc + c\n\nQuick change directory history: Esc + c and then Esc + h\n\nQuick change directory previous entry: Esc + c and then Esc + p \nCommand line history: Esc + h\n\nCommand line previous command: Esc + p\n\nView change: Esc + t (each time you do this shortcut a new directory view will appear)\n\nPrint current working directory in command line: Esc + a\n\nSwitch between background command line and MC: Ctrl + o\n\nSearch/Go to directory in active panel: Esc + s / Ctrl + s then start typing directory name\n\nOpen same working directory in the inactive panel: Esc + i\n\nOpen parent working directory in the inactive panel: Esc + o\n\nGo to top of directory in active pane: Esc + v / Esc + g\n\nGo to bottom of directory in active pane: Esc + j / Ctrl + c\n\nGo to previous directory: Esc + y\n\nSearch pop-up: Esc + ?\n\n----- Ctrl -----\n\nRefresh active panel: Ctrl + r\n\nSelecting files and directories: Ctrl + t\n\nSwitch active \n-\n inactive panels: Ctrl + i\n\nSwitch active \n-\n inactive panels content: Ctrl + u\n\nExecute command / Open a directory: Ctrl + j\n\n----- F -----\n\nF1: help\n\nF2: user menu\n\nF3: read file / open directory\n\nF4: edit file\n\nF5: copy file or direcotry\n\nF6: move file or directory\n\nF7: create directory\n\nF8: delete file / directory\n\nF9: open menu bar\n\nF10: exit MC", 
+            "title": "Mc"
         }
     ]
 }
