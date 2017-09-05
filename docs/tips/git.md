@@ -10,7 +10,7 @@
 * Créer et se placer sur une branche
 
         $ git checkout -b <branch_name>
-	$ git checkout -b test origin/dev -> crée la branche test et suit la branche origin/dev
+        $ git checkout -b test origin/dev -> crée la branche test et suit la branche origin/dev
 
 * Supprimer une branche
 
