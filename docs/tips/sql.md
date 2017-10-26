@@ -55,9 +55,9 @@ on n.oid = t.typnamespace
 where t.typname = ${type};
 ```
 
-### Postgresql / JSON : sheat cheat
+### Postgresql / JSON : sheet cheat
 
-Merci à [Hackernoon](https://hackernoon.com/how-to-query-jsonb-beginner-sheet-cheat-4da3aa5082a3)
+Merci à [Hackernoon](https://hackernoon.com/how-to-query-jsonb-beginner-sheet-cheat-4da3aa5082a3).
 
 * Select items by the value of a first level attribute (#1 way)
 
