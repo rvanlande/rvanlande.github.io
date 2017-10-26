@@ -59,31 +59,31 @@ where t.typname = ${type};
 
 Merci à [Hackernoon](https://hackernoon.com/how-to-query-jsonb-beginner-sheet-cheat-4da3aa5082a3).
 
-* Select items by the value of a first level attribute (#1 way)
+* **Select items by the value of a first level attribute (#1 way)**
 
 ```sql
 SELECT * FROM users WHERE metadata @> '{"country": "Peru"}';
 ```
  
-* Select items by the value of a first level attribute (#2 way)
+* **Select items by the value of a first level attribute (#2 way)**
 
 ```sql
 SELECT * FROM users WHERE metadata->>'country' = 'Peru';
 ```
 
-* Select item attribute value
+* **Select item attribute value**
 
 ```sql
 SELECT metadata->>'country' FROM users;
 ```
 
-* Select only items where a particular attribute is present
+* **Select only items where a particular attribute is present**
 
 ```sql
 SELECT * FROM users WHERE metadata->>'country' IS NOT NULL;
 ```
 
-* Select items by the value of a nested attribute
+* **Select items by the value of a nested attribute**
 
 ```sql
 SELECT * FROM users WHERE metadata->'company'->>'name' = "Mozilla";
@@ -92,32 +92,32 @@ SELECT *
   WHERE metadata @> '{"company":{"name": "Mozilla"}}';
 ```  
     
-* Select items by the value of an attribute in an array
+* **Select items by the value of an attribute in an array**
 
 ```sql
 SELECT * FROM users WHERE metadata @> '{"companies": ["Mozilla"]}';
 ```
 
-* IN operator on attributes
+* **IN operator on attributes**
 
 ```sql
 SELECT * FROM users 
   WHERE metadata->>'countries' IN ('Chad', 'Japan');
 ```  
   
-* Insert a whole object
+* **Insert a whole object**
 
 ```sql
 UPDATE users SET metadata = '{"country": "India"}';
 ```
 
-* Update or insert an attribute
+* **Update or insert an attribute**
 
 ```sql
 UPDATE users SET metadata = metadata || '{"country": "Egypt"}';
 ```
 
-* Removing an attribute
+* **Removing an attribute**
 
 ```sql
 UPDATE users SET metadata = metadata - 'country';
