@@ -556,35 +556,35 @@ $ psql            // conect to database
 <h3 id="postgresql-json-sheet-cheat">Postgresql / JSON : sheet cheat</h3>
 <p>Merci à <a href="https://hackernoon.com/how-to-query-jsonb-beginner-sheet-cheat-4da3aa5082a3">Hackernoon</a>.</p>
 <ul>
-<li>Select items by the value of a first level attribute (#1 way)</li>
+<li><strong>Select items by the value of a first level attribute (#1 way)</strong></li>
 </ul>
 <div class="codehilite"><pre><span></span><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">users</span> <span class="k">WHERE</span> <span class="n">metadata</span> <span class="o">@&gt;</span> <span class="s1">&#39;{&quot;country&quot;: &quot;Peru&quot;}&#39;</span><span class="p">;</span>
 </pre></div>
 
 
 <ul>
-<li>Select items by the value of a first level attribute (#2 way)</li>
+<li><strong>Select items by the value of a first level attribute (#2 way)</strong></li>
 </ul>
 <div class="codehilite"><pre><span></span><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">users</span> <span class="k">WHERE</span> <span class="n">metadata</span><span class="o">-&gt;&gt;</span><span class="s1">&#39;country&#39;</span> <span class="o">=</span> <span class="s1">&#39;Peru&#39;</span><span class="p">;</span>
 </pre></div>
 
 
 <ul>
-<li>Select item attribute value</li>
+<li><strong>Select item attribute value</strong></li>
 </ul>
 <div class="codehilite"><pre><span></span><span class="k">SELECT</span> <span class="n">metadata</span><span class="o">-&gt;&gt;</span><span class="s1">&#39;country&#39;</span> <span class="k">FROM</span> <span class="n">users</span><span class="p">;</span>
 </pre></div>
 
 
 <ul>
-<li>Select only items where a particular attribute is present</li>
+<li><strong>Select only items where a particular attribute is present</strong></li>
 </ul>
 <div class="codehilite"><pre><span></span><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">users</span> <span class="k">WHERE</span> <span class="n">metadata</span><span class="o">-&gt;&gt;</span><span class="s1">&#39;country&#39;</span> <span class="k">IS</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">;</span>
 </pre></div>
 
 
 <ul>
-<li>Select items by the value of a nested attribute</li>
+<li><strong>Select items by the value of a nested attribute</strong></li>
 </ul>
 <div class="codehilite"><pre><span></span><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">users</span> <span class="k">WHERE</span> <span class="n">metadata</span><span class="o">-&gt;</span><span class="s1">&#39;company&#39;</span><span class="o">-&gt;&gt;</span><span class="s1">&#39;name&#39;</span> <span class="o">=</span> <span class="ss">&quot;Mozilla&quot;</span><span class="p">;</span>
 <span class="k">SELECT</span> <span class="o">*</span> 
@@ -594,14 +594,14 @@ $ psql            // conect to database
 
 
 <ul>
-<li>Select items by the value of an attribute in an array</li>
+<li><strong>Select items by the value of an attribute in an array</strong></li>
 </ul>
 <div class="codehilite"><pre><span></span><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">users</span> <span class="k">WHERE</span> <span class="n">metadata</span> <span class="o">@&gt;</span> <span class="s1">&#39;{&quot;companies&quot;: [&quot;Mozilla&quot;]}&#39;</span><span class="p">;</span>
 </pre></div>
 
 
 <ul>
-<li>IN operator on attributes</li>
+<li><strong>IN operator on attributes</strong></li>
 </ul>
 <div class="codehilite"><pre><span></span><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">users</span> 
   <span class="k">WHERE</span> <span class="n">metadata</span><span class="o">-&gt;&gt;</span><span class="s1">&#39;countries&#39;</span> <span class="k">IN</span> <span class="p">(</span><span class="s1">&#39;Chad&#39;</span><span class="p">,</span> <span class="s1">&#39;Japan&#39;</span><span class="p">);</span>
@@ -609,21 +609,21 @@ $ psql            // conect to database
 
 
 <ul>
-<li>Insert a whole object</li>
+<li><strong>Insert a whole object</strong></li>
 </ul>
 <div class="codehilite"><pre><span></span><span class="k">UPDATE</span> <span class="n">users</span> <span class="k">SET</span> <span class="n">metadata</span> <span class="o">=</span> <span class="s1">&#39;{&quot;country&quot;: &quot;India&quot;}&#39;</span><span class="p">;</span>
 </pre></div>
 
 
 <ul>
-<li>Update or insert an attribute</li>
+<li><strong>Update or insert an attribute</strong></li>
 </ul>
 <div class="codehilite"><pre><span></span><span class="k">UPDATE</span> <span class="n">users</span> <span class="k">SET</span> <span class="n">metadata</span> <span class="o">=</span> <span class="n">metadata</span> <span class="o">||</span> <span class="s1">&#39;{&quot;country&quot;: &quot;Egypt&quot;}&#39;</span><span class="p">;</span>
 </pre></div>
 
 
 <ul>
-<li>Removing an attribute</li>
+<li><strong>Removing an attribute</strong></li>
 </ul>
 <div class="codehilite"><pre><span></span><span class="k">UPDATE</span> <span class="n">users</span> <span class="k">SET</span> <span class="n">metadata</span> <span class="o">=</span> <span class="n">metadata</span> <span class="o">-</span> <span class="s1">&#39;country&#39;</span><span class="p">;</span>
 </pre></div>
