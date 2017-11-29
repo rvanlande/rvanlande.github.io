@@ -51,31 +51,6 @@
             "title": "Stash"
         }, 
         {
-            "location": "/tips/linux/", 
-            "text": "R\u00e9seaux\n\n\n\n\nvoir les ports ouverts :\n$ sudo netstat -tulpn\n\n\n\n\n\n\n\n\n\nSystemd\n\n\n\n\n\n\nliste les services\n\n\n$ systemctl\n\n\n\n\n\n\n\n\n\nd\u00e9marre un service\n\n\n$ systemctl start exim4\n\n\n\n\n\n\n\n\n\narr\u00eate un service\n\n\n$ systemctl stop exim4\n\n\n\n\n\n\n\n\n\naffiche le statut d'un service\n\n\n$ systemctl status exim4\n\n\n\n\n\n\n\n\n\nactive le service au d\u00e9marrage\n\n\n$ systemctl \nenable\n exim4\n\n\n\n\n\n\n\n\n\nd\u00e9sactive le service au d\u00e9marrage\n\n\n$ systemctl disable exim4\n\n\n\n\n\n\n\n\n\ngpg\n\n\n\n\n\n\ng\u00e9n\u00e9ration des cl\u00e9s\n\n\n$ gpg --gen-key\n\n\n\n\n\n\n\n\n\nafficher les cl\u00e9s\n\n\n$ gpg --list-keys\n$ gpg --list-secret-keys\n\n\n\n\n\n\n\n\n\nimporter une cl\u00e9\n\n\n$\n \ngpg\n \n--\nimport\n \nkey\n-\nfile\n\n\n\n\n\n\n\n\n\n\nexporter une cl\u00e9 publique\n\n\n$ gpg -a --export \nid-cle\n\n\n\n\n\n\n\n\n\n\nexporter une cl\u00e9 priv\u00e9e\n\n\n$ gpg -a --export-secret-key \nid-cle\n\n\n\n\n\n\n\n\n\n\nchiffrer un message\n\n\n$ gpg -a -r \nemail\n -e \nfile\n\n\n\n\n\n\n\n\n\n\nd\u00e9chiffrer un message\n\n\n$ gpg -d \nfile\n\n\n\n\n\n\n\n\n\n\nAutres\n\n\n\n\nzipper le contenu d'un r\u00e9pertoire\n$ zip -r nom_du_fichier.zip *", 
-            "title": "Linux"
-        }, 
-        {
-            "location": "/tips/linux/#reseaux", 
-            "text": "voir les ports ouverts : $ sudo netstat -tulpn", 
-            "title": "R\u00e9seaux"
-        }, 
-        {
-            "location": "/tips/linux/#systemd", 
-            "text": "liste les services  $ systemctl    d\u00e9marre un service  $ systemctl start exim4    arr\u00eate un service  $ systemctl stop exim4    affiche le statut d'un service  $ systemctl status exim4    active le service au d\u00e9marrage  $ systemctl  enable  exim4    d\u00e9sactive le service au d\u00e9marrage  $ systemctl disable exim4", 
-            "title": "Systemd"
-        }, 
-        {
-            "location": "/tips/linux/#gpg", 
-            "text": "g\u00e9n\u00e9ration des cl\u00e9s  $ gpg --gen-key    afficher les cl\u00e9s  $ gpg --list-keys\n$ gpg --list-secret-keys    importer une cl\u00e9  $   gpg   -- import   key - file     exporter une cl\u00e9 publique  $ gpg -a --export  id-cle     exporter une cl\u00e9 priv\u00e9e  $ gpg -a --export-secret-key  id-cle     chiffrer un message  $ gpg -a -r  email  -e  file     d\u00e9chiffrer un message  $ gpg -d  file", 
-            "title": "gpg"
-        }, 
-        {
-            "location": "/tips/linux/#autres", 
-            "text": "zipper le contenu d'un r\u00e9pertoire $ zip -r nom_du_fichier.zip *", 
-            "title": "Autres"
-        }, 
-        {
             "location": "/tips/mkdocs/", 
             "text": "Installation\n\n\n\n\nPr\u00e9-requis :\n\n\n\n\nInstaller mkdocs\n\n\n\n\nInstallation\n\n\n\n\n$ git clone github.com/rvanlande/rvanlande.github.io\n$ git checkout mkdocs\n\n\n\n\n\nMise \u00e0 jour de la documentation\n\n\n\n\n\n\nLa documentation se trouve dans le r\u00e9pertoire \nrvanlande.github.io/docs\n\n\n\n\n\n\nsauvegarde des mises \u00e0 jour dans git\n\n\n$ git commit -am \nupdate docs\n\n$ git push origin mkdocs\n\n\n\n\n\n\n\n\n\nD\u00e9ploiement de la documentation\n\n\n$ mkdocs gh-deploy --remote-branch master", 
             "title": "Mkdocs"
@@ -164,6 +139,31 @@
             "location": "/tips/docker/docker/#volume", 
             "text": "Liste des volumes orphelins  $ docker volume ls -qf  dangling = true   Suppression des volumes orphelins  $ docker volume rm  $( docker volume ls -qf  dangling = true )", 
             "title": "Volume"
+        }, 
+        {
+            "location": "/tips/linux/divers/", 
+            "text": "R\u00e9seaux\n\n\n\n\nvoir les ports ouverts :\n$ sudo netstat -tulpn\n\n\n\n\n\n\n\n\n\nSystemd\n\n\n\n\n\n\nliste les services\n\n\n$ systemctl\n\n\n\n\n\n\n\n\n\nd\u00e9marre un service\n\n\n$ systemctl start exim4\n\n\n\n\n\n\n\n\n\narr\u00eate un service\n\n\n$ systemctl stop exim4\n\n\n\n\n\n\n\n\n\naffiche le statut d'un service\n\n\n$ systemctl status exim4\n\n\n\n\n\n\n\n\n\nactive le service au d\u00e9marrage\n\n\n$ systemctl \nenable\n exim4\n\n\n\n\n\n\n\n\n\nd\u00e9sactive le service au d\u00e9marrage\n\n\n$ systemctl disable exim4\n\n\n\n\n\n\n\n\n\ngpg\n\n\n\n\n\n\ng\u00e9n\u00e9ration des cl\u00e9s\n\n\n$ gpg --gen-key\n\n\n\n\n\n\n\n\n\nafficher les cl\u00e9s\n\n\n$ gpg --list-keys\n$ gpg --list-secret-keys\n\n\n\n\n\n\n\n\n\nimporter une cl\u00e9\n\n\n$\n \ngpg\n \n--\nimport\n \nkey\n-\nfile\n\n\n\n\n\n\n\n\n\n\nexporter une cl\u00e9 publique\n\n\n$ gpg -a --export \nid-cle\n\n\n\n\n\n\n\n\n\n\nexporter une cl\u00e9 priv\u00e9e\n\n\n$ gpg -a --export-secret-key \nid-cle\n\n\n\n\n\n\n\n\n\n\nchiffrer un message\n\n\n$ gpg -a -r \nemail\n -e \nfile\n\n\n\n\n\n\n\n\n\n\nd\u00e9chiffrer un message\n\n\n$ gpg -d \nfile\n\n\n\n\n\n\n\n\n\n\nAutres\n\n\n\n\nzipper le contenu d'un r\u00e9pertoire\n$ zip -r nom_du_fichier.zip *", 
+            "title": "Divers"
+        }, 
+        {
+            "location": "/tips/linux/divers/#reseaux", 
+            "text": "voir les ports ouverts : $ sudo netstat -tulpn", 
+            "title": "R\u00e9seaux"
+        }, 
+        {
+            "location": "/tips/linux/divers/#systemd", 
+            "text": "liste les services  $ systemctl    d\u00e9marre un service  $ systemctl start exim4    arr\u00eate un service  $ systemctl stop exim4    affiche le statut d'un service  $ systemctl status exim4    active le service au d\u00e9marrage  $ systemctl  enable  exim4    d\u00e9sactive le service au d\u00e9marrage  $ systemctl disable exim4", 
+            "title": "Systemd"
+        }, 
+        {
+            "location": "/tips/linux/divers/#gpg", 
+            "text": "g\u00e9n\u00e9ration des cl\u00e9s  $ gpg --gen-key    afficher les cl\u00e9s  $ gpg --list-keys\n$ gpg --list-secret-keys    importer une cl\u00e9  $   gpg   -- import   key - file     exporter une cl\u00e9 publique  $ gpg -a --export  id-cle     exporter une cl\u00e9 priv\u00e9e  $ gpg -a --export-secret-key  id-cle     chiffrer un message  $ gpg -a -r  email  -e  file     d\u00e9chiffrer un message  $ gpg -d  file", 
+            "title": "gpg"
+        }, 
+        {
+            "location": "/tips/linux/divers/#autres", 
+            "text": "zipper le contenu d'un r\u00e9pertoire $ zip -r nom_du_fichier.zip *", 
+            "title": "Autres"
         }, 
         {
             "location": "/tips/linux/mc/", 
