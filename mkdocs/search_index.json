@@ -167,8 +167,23 @@
         }, 
         {
             "location": "/tips/linux/mc/", 
-            "text": "----- Esc -----\nQuick change directory: Esc + c\n\nQuick change directory history: Esc + c and then Esc + h\n\nQuick change directory previous entry: Esc + c and then Esc + p \nCommand line history: Esc + h\n\nCommand line previous command: Esc + p\n\nView change: Esc + t (each time you do this shortcut a new directory view will appear)\n\nPrint current working directory in command line: Esc + a\n\nSwitch between background command line and MC: Ctrl + o\n\nSearch/Go to directory in active panel: Esc + s / Ctrl + s then start typing directory name\n\nOpen same working directory in the inactive panel: Esc + i\n\nOpen parent working directory in the inactive panel: Esc + o\n\nGo to top of directory in active pane: Esc + v / Esc + g\n\nGo to bottom of directory in active pane: Esc + j / Ctrl + c\n\nGo to previous directory: Esc + y\n\nSearch pop-up: Esc + ?\n\n----- Ctrl -----\n\nRefresh active panel: Ctrl + r\n\nSelecting files and directories: Ctrl + t\n\nSwitch active \n-\n inactive panels: Ctrl + i\n\nSwitch active \n-\n inactive panels content: Ctrl + u\n\nExecute command / Open a directory: Ctrl + j\n\n----- F -----\n\nF1: help\n\nF2: user menu\n\nF3: read file / open directory\n\nF4: edit file\n\nF5: copy file or direcotry\n\nF6: move file or directory\n\nF7: create directory\n\nF8: delete file / directory\n\nF9: open menu bar\n\nF10: exit MC", 
+            "text": "Thanks to \nsgergely\n\n\nEsc\n\n\n\n\nQuick change directory: \nEsc + c\n  \n\n\nQuick change directory history: \nEsc + c\n and then \nEsc + h\n  \n\n\nQuick change directory previous entry: \nEsc + c\n and then \nEsc + p\n \n\n\nCommand line history: \nEsc + h\n  \n\n\nCommand line previous command: \nEsc + p\n  \n\n\nView change: \nEsc + t\n (each time you do this shortcut a new directory view will appear)  \n\n\nPrint current working directory in command line: \nEsc + a\n  \n\n\nSearch/Go to directory in active panel: \nEsc + s / Ctrl + s\n then start typing directory name  \n\n\nOpen same working directory in the inactive panel: \nEsc + i\n  \n\n\nOpen parent working directory in the inactive panel: \nEsc + o\n  \n\n\nGo to top of directory in active pane: \nEsc + v / Esc + g\n  \n\n\nGo to bottom of directory in active pane: \nEsc + j / Ctrl + c\n  \n\n\nGo to previous directory: \nEsc + y\n  \n\n\nSearch pop-up: \nEsc + ?\n  \n\n\n\n\nCtrl\n\n\n\n\nSwitch between background command line and MC: \nCtrl + o\n  \n\n\nRefresh active panel: \nCtrl + r\n  \n\n\nSelecting files and directories: \nCtrl + t\n  \n\n\nSwitch active \n-\n inactive panels: \nCtrl + i\n  \n\n\nSwitch active \n-\n inactive panels content: \nCtrl + u\n  \n\n\nExecute command / Open a directory: \nCtrl + j\n  \n\n\n\n\nF\n\n\n\n\nF1\n help  \n\n\nF2\n user menu  \n\n\nF3\n read file / open directory  \n\n\nF4\n edit file  \n\n\nF5\n copy file or direcotry  \n\n\nF6\n move file or directory  \n\n\nF7\n create directory  \n\n\nF8\n delete file / directory  \n\n\nF9\n open menu bar  \n\n\nF10\n exit MC", 
             "title": "Mc"
+        }, 
+        {
+            "location": "/tips/linux/mc/#esc", 
+            "text": "Quick change directory:  Esc + c     Quick change directory history:  Esc + c  and then  Esc + h     Quick change directory previous entry:  Esc + c  and then  Esc + p    Command line history:  Esc + h     Command line previous command:  Esc + p     View change:  Esc + t  (each time you do this shortcut a new directory view will appear)    Print current working directory in command line:  Esc + a     Search/Go to directory in active panel:  Esc + s / Ctrl + s  then start typing directory name    Open same working directory in the inactive panel:  Esc + i     Open parent working directory in the inactive panel:  Esc + o     Go to top of directory in active pane:  Esc + v / Esc + g     Go to bottom of directory in active pane:  Esc + j / Ctrl + c     Go to previous directory:  Esc + y     Search pop-up:  Esc + ?", 
+            "title": "Esc"
+        }, 
+        {
+            "location": "/tips/linux/mc/#ctrl", 
+            "text": "Switch between background command line and MC:  Ctrl + o     Refresh active panel:  Ctrl + r     Selecting files and directories:  Ctrl + t     Switch active  -  inactive panels:  Ctrl + i     Switch active  -  inactive panels content:  Ctrl + u     Execute command / Open a directory:  Ctrl + j", 
+            "title": "Ctrl"
+        }, 
+        {
+            "location": "/tips/linux/mc/#f", 
+            "text": "F1  help    F2  user menu    F3  read file / open directory    F4  edit file    F5  copy file or direcotry    F6  move file or directory    F7  create directory    F8  delete file / directory    F9  open menu bar    F10  exit MC", 
+            "title": "F"
         }
     ]
 }
