@@ -20,7 +20,7 @@
     
     
       
-        <title>Sql - Software Craftsman</title>
+        <title>Postresql - Software Craftsman</title>
       
     
     
@@ -84,7 +84,7 @@
                 </span>
               
             
-            Sql
+            Postresql
           
         </span>
       </div>
@@ -271,11 +271,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="toc">
-        Sql
+        Postresql
       </label>
     
-    <a href="./" title="Sql" class="md-nav__link md-nav__link--active">
-      Sql
+    <a href="./" title="Postresql" class="md-nav__link md-nav__link--active">
+      Postresql
     </a>
     
       
@@ -287,22 +287,97 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#postgresql" title="PostgreSql" class="md-nav__link">
-    PostgreSql
+  <a href="#cli-tools" title="cli tools" class="md-nav__link">
+    cli tools
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#postgresql-json-sheet-cheat" title="Postgresql / JSON : sheet cheat" class="md-nav__link">
-    Postgresql / JSON : sheet cheat
+  <a href="#pg_dump-save-database" title="pg_dump: save database" class="md-nav__link">
+    pg_dump: save database
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pg_restore-restore-database" title="pg_restore : restore database" class="md-nav__link">
+    pg_restore : restore database
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dropdb-drop-database" title="dropdb : drop database" class="md-nav__link">
+    dropdb : drop database
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#duplicate-database" title="duplicate database" class="md-nav__link">
+    duplicate database
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#psql" title="psql" class="md-nav__link">
+    psql
   </a>
   
 </li>
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sql-language" title="SQL language" class="md-nav__link">
+    SQL language
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#alter-table" title="alter table" class="md-nav__link">
+    alter table
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add-a-column" title="add a column" class="md-nav__link">
+    add a column
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment" title="comment" class="md-nav__link">
+    comment
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#postgresql-json-sheet-cheat" title="Postgresql / JSON : sheet cheat" class="md-nav__link">
+    Postgresql / JSON : sheet cheat
+  </a>
   
 </li>
       
@@ -435,22 +510,97 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#postgresql" title="PostgreSql" class="md-nav__link">
-    PostgreSql
+  <a href="#cli-tools" title="cli tools" class="md-nav__link">
+    cli tools
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#postgresql-json-sheet-cheat" title="Postgresql / JSON : sheet cheat" class="md-nav__link">
-    Postgresql / JSON : sheet cheat
+  <a href="#pg_dump-save-database" title="pg_dump: save database" class="md-nav__link">
+    pg_dump: save database
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pg_restore-restore-database" title="pg_restore : restore database" class="md-nav__link">
+    pg_restore : restore database
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dropdb-drop-database" title="dropdb : drop database" class="md-nav__link">
+    dropdb : drop database
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#duplicate-database" title="duplicate database" class="md-nav__link">
+    duplicate database
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#psql" title="psql" class="md-nav__link">
+    psql
   </a>
   
 </li>
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sql-language" title="SQL language" class="md-nav__link">
+    SQL language
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#alter-table" title="alter table" class="md-nav__link">
+    alter table
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add-a-column" title="add a column" class="md-nav__link">
+    add a column
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment" title="comment" class="md-nav__link">
+    comment
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#postgresql-json-sheet-cheat" title="Postgresql / JSON : sheet cheat" class="md-nav__link">
+    Postgresql / JSON : sheet cheat
+  </a>
   
 </li>
       
@@ -469,54 +619,25 @@
               
                 
                 
-                  <h1>Sql</h1>
+                  <h1>Postresql</h1>
                 
-                <h2 id="postgresql">PostgreSql</h2>
-<ul>
-<li>
-<p>connect to database</p>
-<div class="codehilite"><pre><span></span>psql -U <span class="cp">${</span><span class="n">user</span><span class="cp">}</span> <span class="cp">${</span><span class="n">db_name</span><span class="cp">}</span>
-</pre></div>
-
-
-</li>
-<li>
-<p>dsiplay result in page mode</p>
-<div class="codehilite"><pre><span></span>\pset pager on
-</pre></div>
-
-
-</li>
-<li>
-<p>change database</p>
-<div class="codehilite"><pre><span></span>\c &lt;other_db&gt;
-</pre></div>
-
-
-</li>
-<li>
-<p>save database</p>
+                <h2 id="cli-tools">cli tools</h2>
+<h3 id="pg_dump-save-database">pg_dump: save database</h3>
 <div class="codehilite"><pre><span></span>pg_dump -Fc <span class="cp">${</span><span class="n">db_name</span><span class="cp">}</span> &gt; <span class="cp">${</span><span class="n">dump_name</span><span class="cp">}</span>.dmp
 </pre></div>
 
 
-</li>
-<li>
-<p>restore database</p>
+<h3 id="pg_restore-restore-database">pg_restore : restore database</h3>
 <div class="codehilite"><pre><span></span>pg_restore -d <span class="cp">${</span><span class="n">db_name</span><span class="cp">}</span> <span class="cp">${</span><span class="n">dump_name</span><span class="cp">}</span>.dmp
 </pre></div>
 
 
-</li>
-<li>
-<p>drop database</p>
+<h3 id="dropdb-drop-database">dropdb : drop database</h3>
 <div class="codehilite"><pre><span></span>dropdb -U rcv <span class="cp">${</span><span class="n">db_name</span><span class="cp">}</span>
 </pre></div>
 
 
-</li>
-<li>
-<p>duplicate database</p>
+<h3 id="duplicate-database">duplicate database</h3>
 <div class="codehilite"><pre><span></span>$ su -
 $ su - postgres   // connect as postgre user
 $ psql            // conect to database
@@ -524,12 +645,29 @@ $ psql            // conect to database
 </pre></div>
 
 
-</li>
-<li>
-<p>sessions connected to database</p>
-</li>
+<h3 id="psql">psql</h3>
+<ul>
+<li>connect to database</li>
 </ul>
-<div class="codehilite"><pre><span></span><span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">pg_stat_activity</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span>psql -U <span class="cp">${</span><span class="n">user</span><span class="cp">}</span> <span class="cp">${</span><span class="n">db_name</span><span class="cp">}</span>
+````
+
+* display result in page mode
+</pre></div>
+
+
+<p>\pset pager on</p>
+<div class="codehilite"><pre><span></span>* change database
+</pre></div>
+
+
+<p>\c <other_db></p>
+<div class="codehilite"><pre><span></span>## Database informations
+
+* sessions connected to database
+
+```sql
+select * from pg_stat_activity;
 </pre></div>
 
 
@@ -553,7 +691,20 @@ $ psql            // conect to database
 </pre></div>
 
 
-<h3 id="postgresql-json-sheet-cheat">Postgresql / JSON : sheet cheat</h3>
+<h2 id="sql-language">SQL language</h2>
+<h3 id="alter-table">alter table</h3>
+<h4 id="add-a-column">add a column</h4>
+<div class="codehilite"><pre><span></span><span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">personne</span> <span class="k">ADD</span> <span class="k">COLUMN</span> <span class="n">parent_id</span> <span class="nb">INTEGER</span> <span class="k">REFERENCES</span> <span class="n">personne</span><span class="p">(</span><span class="n">id</span><span class="p">);</span>
+</pre></div>
+
+
+<h3 id="comment">comment</h3>
+<div class="codehilite"><pre><span></span><span class="k">COMMENT</span> <span class="k">ON</span> <span class="k">TABLE</span> <span class="n">personne</span> <span class="k">IS</span> <span class="s1">&#39;gestion des personnes&#39;</span><span class="p">;</span>
+<span class="k">COMMENT</span> <span class="k">ON</span> <span class="k">COLUMN</span> <span class="n">personne</span><span class="p">.</span><span class="n">date_naissance</span> <span class="k">IS</span> <span class="s1">&#39;date de naissance&#39;</span><span class="p">;</span>
+</pre></div>
+
+
+<h2 id="postgresql-json-sheet-cheat">Postgresql / JSON : sheet cheat</h2>
 <p>Merci à <a href="https://hackernoon.com/how-to-query-jsonb-beginner-sheet-cheat-4da3aa5082a3">Hackernoon</a>.</p>
 <ul>
 <li><strong>Select items by the value of a first level attribute (#1 way)</strong></li>
