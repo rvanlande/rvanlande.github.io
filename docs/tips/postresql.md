@@ -1,35 +1,53 @@
-## PostgreSql
+## cli tools
+
+### pg_dump: save database
+
+```
+pg_dump -Fc ${db_name} > ${dump_name}.dmp
+```
+
+### pg_restore : restore database
+
+```
+pg_restore -d ${db_name} ${dump_name}.dmp
+```
+
+### dropdb : drop database
+
+```
+dropdb -U rcv ${db_name}
+```
+
+### duplicate database
+
+```
+$ su -
+$ su - postgres   // connect as postgre user
+$ psql            // conect to database
+~=> CREATE DATABASE ${db_name2} WITH TEMPLATE ${db_name1} OWNER rcv;
+```
+
+### psql
 
 * connect to database
 
-        psql -U ${user} ${db_name}
+```
+psql -U ${user} ${db_name}
+````
 
-* dsiplay result in page mode
+* display result in page mode
 
-        \pset pager on
+```
+\pset pager on
+```
 
 * change database
 
-        \c <other_db>
+```
+\c <other_db>
+```        
 
-* save database
-
-        pg_dump -Fc ${db_name} > ${dump_name}.dmp
-
-* restore database
-
-        pg_restore -d ${db_name} ${dump_name}.dmp
-        
-* drop database
-
-        dropdb -U rcv ${db_name}
-
-* duplicate database
-
-        $ su -
-        $ su - postgres   // connect as postgre user
-        $ psql            // conect to database
-        ~=> CREATE DATABASE ${db_name2} WITH TEMPLATE ${db_name1} OWNER rcv;
+## Database informations
 
 * sessions connected to database
 
@@ -55,7 +73,24 @@ on n.oid = t.typnamespace
 where t.typname = ${type};
 ```
 
-### Postgresql / JSON : sheet cheat
+## SQL language
+
+### alter table
+
+#### add a column
+
+```sql
+ALTER TABLE personne ADD COLUMN parent_id INTEGER REFERENCES personne(id);
+```
+
+### comment
+
+```sql
+COMMENT ON TABLE personne IS 'gestion des personnes';
+COMMENT ON COLUMN personne.date_naissance IS 'date de naissance';
+```
+
+## Postgresql / JSON : sheet cheat
 
 Merci à [Hackernoon](https://hackernoon.com/how-to-query-jsonb-beginner-sheet-cheat-4da3aa5082a3).
 
