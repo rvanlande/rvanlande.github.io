@@ -6,16 +6,22 @@
 pg_dump -Fc ${db_name} > ${dump_name}.dmp
 ```
 
+### dropdb : drop database
+
+```
+dropdb -U <user> ${db_name}
+```
+
+### createdb : create database
+
+```
+createdb -u <user> ${db_name}
+```
+
 ### pg_restore : restore database
 
 ```
 pg_restore -d ${db_name} ${dump_name}.dmp
-```
-
-### dropdb : drop database
-
-```
-dropdb -U rcv ${db_name}
 ```
 
 ### duplicate database
@@ -33,7 +39,7 @@ $ psql            // conect to database
 
 ```
 psql -U ${user} ${db_name}
-````
+```
 
 * display result in page mode
 
