@@ -20,7 +20,7 @@
     
     
       
-        <title>Divers - Software Craftsman</title>
+        <title>Nginx - Software Craftsman</title>
       
     
     
@@ -84,11 +84,11 @@
                 </span>
               
                 <span class="md-header-nav__parent">
-                  Linux
+                  Webserver
                 </span>
               
             
-            Divers
+            Nginx
           
         </span>
       </div>
@@ -326,12 +326,10 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-5" type="checkbox" id="nav-5-5" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-5" type="checkbox" id="nav-5-5">
     
     <label class="md-nav__link" for="nav-5-5">
       Linux
@@ -347,64 +345,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="toc">
-        Divers
-      </label>
-    
-    <a href="./" title="Divers" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../linux/divers/" title="Divers" class="md-nav__link">
       Divers
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-  
-    <label class="md-nav__title" for="toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#reseaux" title="Réseaux" class="md-nav__link">
-    Réseaux
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#systemd" title="Systemd" class="md-nav__link">
-    Systemd
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#gpg" title="gpg" class="md-nav__link">
-    gpg
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#autres" title="Autres" class="md-nav__link">
-    Autres
-  </a>
-  
-</li>
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -414,7 +359,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../mc/" title="Mc" class="md-nav__link">
+    <a href="../../linux/mc/" title="Mc" class="md-nav__link">
       Mc
     </a>
   </li>
@@ -429,10 +374,12 @@
           
           
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-6" type="checkbox" id="nav-5-6">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-6" type="checkbox" id="nav-5-6" checked>
     
     <label class="md-nav__link" for="nav-5-6">
       Webserver
@@ -448,11 +395,47 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../webserver/nginx/" title="Nginx" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Nginx
+      </label>
+    
+    <a href="./" title="Nginx" class="md-nav__link md-nav__link--active">
       Nginx
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#clear-nginx-cache" title="Clear Nginx cache" class="md-nav__link">
+    Clear Nginx cache
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -480,34 +463,15 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
+  
   
     <label class="md-nav__title" for="toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#reseaux" title="Réseaux" class="md-nav__link">
-    Réseaux
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#systemd" title="Systemd" class="md-nav__link">
-    Systemd
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#gpg" title="gpg" class="md-nav__link">
-    gpg
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#autres" title="Autres" class="md-nav__link">
-    Autres
+  <a href="#clear-nginx-cache" title="Clear Nginx cache" class="md-nav__link">
+    Clear Nginx cache
   </a>
   
 </li>
@@ -527,122 +491,10 @@
               
                 
                 
-                  <h1>Divers</h1>
-                
-                <h2 id="reseaux">Réseaux</h2>
-<ul>
-<li>voir les ports ouverts :<div class="codehilite"><pre><span></span>$ sudo netstat -tulpn
+                <h1 id="nginx">Nginx</h1>
+<h2 id="clear-nginx-cache">Clear Nginx cache</h2>
+<div class="codehilite"><pre><span></span>rm -rf /var/cache/nginx/*
 </pre></div>
-
-
-</li>
-</ul>
-<h2 id="systemd">Systemd</h2>
-<ul>
-<li>
-<p>liste les services</p>
-<div class="codehilite"><pre><span></span>$ systemctl
-</pre></div>
-
-
-</li>
-<li>
-<p>démarre un service</p>
-<div class="codehilite"><pre><span></span>$ systemctl start exim4
-</pre></div>
-
-
-</li>
-<li>
-<p>arrête un service</p>
-<div class="codehilite"><pre><span></span>$ systemctl stop exim4
-</pre></div>
-
-
-</li>
-<li>
-<p>affiche le statut d'un service</p>
-<div class="codehilite"><pre><span></span>$ systemctl status exim4
-</pre></div>
-
-
-</li>
-<li>
-<p>active le service au démarrage</p>
-<div class="codehilite"><pre><span></span>$ systemctl <span class="nb">enable</span> exim4
-</pre></div>
-
-
-</li>
-<li>
-<p>désactive le service au démarrage</p>
-<div class="codehilite"><pre><span></span>$ systemctl disable exim4
-</pre></div>
-
-
-</li>
-</ul>
-<h2 id="gpg">gpg</h2>
-<ul>
-<li>
-<p>génération des clés</p>
-<div class="codehilite"><pre><span></span>$ gpg --gen-key
-</pre></div>
-
-
-</li>
-<li>
-<p>afficher les clés</p>
-<div class="codehilite"><pre><span></span>$ gpg --list-keys
-$ gpg --list-secret-keys
-</pre></div>
-
-
-</li>
-<li>
-<p>importer une clé</p>
-<div class="codehilite"><pre><span></span><span class="err">$</span> <span class="n">gpg</span> <span class="o">--</span><span class="kn">import</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">-</span><span class="nb">file</span><span class="o">&gt;</span>
-</pre></div>
-
-
-</li>
-<li>
-<p>exporter une clé publique</p>
-<div class="codehilite"><pre><span></span>$ gpg -a --export &lt;id-cle&gt;
-</pre></div>
-
-
-</li>
-<li>
-<p>exporter une clé privée</p>
-<div class="codehilite"><pre><span></span>$ gpg -a --export-secret-key &lt;id-cle&gt;
-</pre></div>
-
-
-</li>
-<li>
-<p>chiffrer un message</p>
-<div class="codehilite"><pre><span></span>$ gpg -a -r &lt;email&gt; -e &lt;file&gt;
-</pre></div>
-
-
-</li>
-<li>
-<p>déchiffrer un message</p>
-<div class="codehilite"><pre><span></span>$ gpg -d &lt;file&gt;
-</pre></div>
-
-
-</li>
-</ul>
-<h2 id="autres">Autres</h2>
-<ul>
-<li>zipper le contenu d'un répertoire<div class="codehilite"><pre><span></span>$ zip -r nom_du_fichier.zip *
-</pre></div>
-
-
-</li>
-</ul>
                 
                   
                 
@@ -661,7 +513,7 @@ $ gpg --list-secret-keys
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../../docker/docker/" title="Docker" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../../linux/mc/" title="Mc" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -670,25 +522,11 @@ $ gpg --list-secret-keys
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Docker
-              </span>
-            </div>
-          </a>
-        
-        
-          <a href="../mc/" title="Mc" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Next
-                </span>
                 Mc
               </span>
             </div>
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
-            </div>
           </a>
+        
         
       </nav>
     </div>

@@ -302,15 +302,22 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#pg_restore-restore-database" title="pg_restore : restore database" class="md-nav__link">
-    pg_restore : restore database
+  <a href="#dropdb-drop-database" title="dropdb : drop database" class="md-nav__link">
+    dropdb : drop database
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#dropdb-drop-database" title="dropdb : drop database" class="md-nav__link">
-    dropdb : drop database
+  <a href="#createdb-create-database" title="createdb : create database" class="md-nav__link">
+    createdb : create database
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pg_restore-restore-database" title="pg_restore : restore database" class="md-nav__link">
+    pg_restore : restore database
   </a>
   
 </li>
@@ -331,6 +338,13 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#database-informations" title="Database informations" class="md-nav__link">
+    Database informations
+  </a>
   
 </li>
       
@@ -486,6 +500,42 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-6" type="checkbox" id="nav-5-6">
+    
+    <label class="md-nav__link" for="nav-5-6">
+      Webserver
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-6">
+        Webserver
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../webserver/nginx/" title="Nginx" class="md-nav__link">
+      Nginx
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -525,15 +575,22 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#pg_restore-restore-database" title="pg_restore : restore database" class="md-nav__link">
-    pg_restore : restore database
+  <a href="#dropdb-drop-database" title="dropdb : drop database" class="md-nav__link">
+    dropdb : drop database
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#dropdb-drop-database" title="dropdb : drop database" class="md-nav__link">
-    dropdb : drop database
+  <a href="#createdb-create-database" title="createdb : create database" class="md-nav__link">
+    createdb : create database
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pg_restore-restore-database" title="pg_restore : restore database" class="md-nav__link">
+    pg_restore : restore database
   </a>
   
 </li>
@@ -554,6 +611,13 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#database-informations" title="Database informations" class="md-nav__link">
+    Database informations
+  </a>
   
 </li>
       
@@ -627,13 +691,18 @@
 </pre></div>
 
 
-<h3 id="pg_restore-restore-database">pg_restore : restore database</h3>
-<div class="codehilite"><pre><span></span>pg_restore -d <span class="cp">${</span><span class="n">db_name</span><span class="cp">}</span> <span class="cp">${</span><span class="n">dump_name</span><span class="cp">}</span>.dmp
+<h3 id="dropdb-drop-database">dropdb : drop database</h3>
+<div class="codehilite"><pre><span></span>dropdb -U <span class="nt">&lt;user&gt;</span> <span class="cp">${</span><span class="n">db_name</span><span class="cp">}</span>
 </pre></div>
 
 
-<h3 id="dropdb-drop-database">dropdb : drop database</h3>
-<div class="codehilite"><pre><span></span>dropdb -U rcv <span class="cp">${</span><span class="n">db_name</span><span class="cp">}</span>
+<h3 id="createdb-create-database">createdb : create database</h3>
+<div class="codehilite"><pre><span></span>createdb -u <span class="nt">&lt;user&gt;</span> <span class="cp">${</span><span class="n">db_name</span><span class="cp">}</span>
+</pre></div>
+
+
+<h3 id="pg_restore-restore-database">pg_restore : restore database</h3>
+<div class="codehilite"><pre><span></span>pg_restore -d <span class="cp">${</span><span class="n">db_name</span><span class="cp">}</span> <span class="cp">${</span><span class="n">dump_name</span><span class="cp">}</span>.dmp
 </pre></div>
 
 
@@ -650,24 +719,28 @@ $ psql            // conect to database
 <li>connect to database</li>
 </ul>
 <div class="codehilite"><pre><span></span>psql -U <span class="cp">${</span><span class="n">user</span><span class="cp">}</span> <span class="cp">${</span><span class="n">db_name</span><span class="cp">}</span>
-````
-
-* display result in page mode
 </pre></div>
 
 
-<p>\pset pager on</p>
-<div class="codehilite"><pre><span></span>* change database
+<ul>
+<li>display result in page mode</li>
+</ul>
+<div class="codehilite"><pre><span></span>\pset pager on
 </pre></div>
 
 
-<p>\c <other_db></p>
-<div class="codehilite"><pre><span></span>## Database informations
+<ul>
+<li>change database</li>
+</ul>
+<div class="codehilite"><pre><span></span>\c &lt;other_db&gt;
+</pre></div>
 
-* sessions connected to database
 
-```sql
-select * from pg_stat_activity;
+<h2 id="database-informations">Database informations</h2>
+<ul>
+<li>sessions connected to database</li>
+</ul>
+<div class="codehilite"><pre><span></span><span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">pg_stat_activity</span><span class="p">;</span>
 </pre></div>
 
 

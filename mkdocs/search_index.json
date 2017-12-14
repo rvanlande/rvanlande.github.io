@@ -72,7 +72,7 @@
         }, 
         {
             "location": "/tips/postresql/", 
-            "text": "cli tools\n\n\npg_dump: save database\n\n\npg_dump -Fc \n${\ndb_name\n}\n \n \n${\ndump_name\n}\n.dmp\n\n\n\n\n\npg_restore : restore database\n\n\npg_restore -d \n${\ndb_name\n}\n \n${\ndump_name\n}\n.dmp\n\n\n\n\n\ndropdb : drop database\n\n\ndropdb -U rcv \n${\ndb_name\n}\n\n\n\n\n\n\nduplicate database\n\n\n$ su -\n$ su - postgres   // connect as postgre user\n$ psql            // conect to database\n~\n=\n CREATE DATABASE \n${\ndb_name2\n}\n WITH TEMPLATE \n${\ndb_name1\n}\n OWNER rcv\n;\n\n\n\n\n\n\npsql\n\n\n\n\nconnect to database\n\n\n\n\npsql -U \n${\nuser\n}\n \n${\ndb_name\n}\n\n````\n\n* display result in page mode\n\n\n\n\n\n\\pset pager on\n\n\n* change database\n\n\n\n\n\n\\c \n\n\n## Database informations\n\n* sessions connected to database\n\n```sql\nselect * from pg_stat_activity;\n\n\n\n\n\n\n\nget information about database\n\n\n\n\nselect\n \ntable_name\n,\n \ncolumn_name\n\n\nfrom\n \ninformation_schema\n.\ncolumns\n\n\nwhere\n \ncolumn_name\n \nlike\n \n%xxx%\n \norder\n \nby\n \ntable_name\n,\n \ncolumn_name\n;\n\n\n\n\n\n\n\n\ndisplay enumeration type\n\n\n\n\nselect\n \nn\n.\nnspname\n \nas\n \nenum_schema\n,\n \nt\n.\ntypname\n \nas\n \nenum_name\n,\n \ne\n.\nenumlabel\n \nas\n \nenum_value\n \n\nfrom\n \npg_type\n \nt\n \njoin\n \npg_enum\n \ne\n\n\non\n \nt\n.\noid\n \n=\n \ne\n.\nenumtypid\n \njoin\n \npg_catalog\n.\npg_namespace\n \nn\n\n\non\n \nn\n.\noid\n \n=\n \nt\n.\ntypnamespace\n \n\nwhere\n \nt\n.\ntypname\n \n=\n \n${\ntype\n}\n;\n\n\n\n\n\n\nSQL language\n\n\nalter table\n\n\nadd a column\n\n\nALTER\n \nTABLE\n \npersonne\n \nADD\n \nCOLUMN\n \nparent_id\n \nINTEGER\n \nREFERENCES\n \npersonne\n(\nid\n);\n\n\n\n\n\n\ncomment\n\n\nCOMMENT\n \nON\n \nTABLE\n \npersonne\n \nIS\n \ngestion des personnes\n;\n\n\nCOMMENT\n \nON\n \nCOLUMN\n \npersonne\n.\ndate_naissance\n \nIS\n \ndate de naissance\n;\n\n\n\n\n\n\nPostgresql / JSON : sheet cheat\n\n\nMerci \u00e0 \nHackernoon\n.\n\n\n\n\nSelect items by the value of a first level attribute (#1 way)\n\n\n\n\nSELECT\n \n*\n \nFROM\n \nusers\n \nWHERE\n \nmetadata\n \n@\n \n{\ncountry\n: \nPeru\n}\n;\n\n\n\n\n\n\n\n\nSelect items by the value of a first level attribute (#2 way)\n\n\n\n\nSELECT\n \n*\n \nFROM\n \nusers\n \nWHERE\n \nmetadata\n-\ncountry\n \n=\n \nPeru\n;\n\n\n\n\n\n\n\n\nSelect item attribute value\n\n\n\n\nSELECT\n \nmetadata\n-\ncountry\n \nFROM\n \nusers\n;\n\n\n\n\n\n\n\n\nSelect only items where a particular attribute is present\n\n\n\n\nSELECT\n \n*\n \nFROM\n \nusers\n \nWHERE\n \nmetadata\n-\ncountry\n \nIS\n \nNOT\n \nNULL\n;\n\n\n\n\n\n\n\n\nSelect items by the value of a nested attribute\n\n\n\n\nSELECT\n \n*\n \nFROM\n \nusers\n \nWHERE\n \nmetadata\n-\ncompany\n-\nname\n \n=\n \nMozilla\n;\n\n\nSELECT\n \n*\n \n  \nFROM\n \nusers\n \n  \nWHERE\n \nmetadata\n \n@\n \n{\ncompany\n:{\nname\n: \nMozilla\n}}\n;\n\n\n\n\n\n\n\n\nSelect items by the value of an attribute in an array\n\n\n\n\nSELECT\n \n*\n \nFROM\n \nusers\n \nWHERE\n \nmetadata\n \n@\n \n{\ncompanies\n: [\nMozilla\n]}\n;\n\n\n\n\n\n\n\n\nIN operator on attributes\n\n\n\n\nSELECT\n \n*\n \nFROM\n \nusers\n \n  \nWHERE\n \nmetadata\n-\ncountries\n \nIN\n \n(\nChad\n,\n \nJapan\n);\n\n\n\n\n\n\n\n\nInsert a whole object\n\n\n\n\nUPDATE\n \nusers\n \nSET\n \nmetadata\n \n=\n \n{\ncountry\n: \nIndia\n}\n;\n\n\n\n\n\n\n\n\nUpdate or insert an attribute\n\n\n\n\nUPDATE\n \nusers\n \nSET\n \nmetadata\n \n=\n \nmetadata\n \n||\n \n{\ncountry\n: \nEgypt\n}\n;\n\n\n\n\n\n\n\n\nRemoving an attribute\n\n\n\n\nUPDATE\n \nusers\n \nSET\n \nmetadata\n \n=\n \nmetadata\n \n-\n \ncountry\n;", 
+            "text": "cli tools\n\n\npg_dump: save database\n\n\npg_dump -Fc \n${\ndb_name\n}\n \n \n${\ndump_name\n}\n.dmp\n\n\n\n\n\ndropdb : drop database\n\n\ndropdb -U \nuser\n \n${\ndb_name\n}\n\n\n\n\n\n\ncreatedb : create database\n\n\ncreatedb -u \nuser\n \n${\ndb_name\n}\n\n\n\n\n\n\npg_restore : restore database\n\n\npg_restore -d \n${\ndb_name\n}\n \n${\ndump_name\n}\n.dmp\n\n\n\n\n\nduplicate database\n\n\n$ su -\n$ su - postgres   // connect as postgre user\n$ psql            // conect to database\n~\n=\n CREATE DATABASE \n${\ndb_name2\n}\n WITH TEMPLATE \n${\ndb_name1\n}\n OWNER rcv\n;\n\n\n\n\n\n\npsql\n\n\n\n\nconnect to database\n\n\n\n\npsql -U \n${\nuser\n}\n \n${\ndb_name\n}\n\n\n\n\n\n\n\n\ndisplay result in page mode\n\n\n\n\n\\pset pager on\n\n\n\n\n\n\n\nchange database\n\n\n\n\n\\c \nother_db\n\n\n\n\n\n\nDatabase informations\n\n\n\n\nsessions connected to database\n\n\n\n\nselect\n \n*\n \nfrom\n \npg_stat_activity\n;\n\n\n\n\n\n\n\n\nget information about database\n\n\n\n\nselect\n \ntable_name\n,\n \ncolumn_name\n\n\nfrom\n \ninformation_schema\n.\ncolumns\n\n\nwhere\n \ncolumn_name\n \nlike\n \n%xxx%\n \norder\n \nby\n \ntable_name\n,\n \ncolumn_name\n;\n\n\n\n\n\n\n\n\ndisplay enumeration type\n\n\n\n\nselect\n \nn\n.\nnspname\n \nas\n \nenum_schema\n,\n \nt\n.\ntypname\n \nas\n \nenum_name\n,\n \ne\n.\nenumlabel\n \nas\n \nenum_value\n \n\nfrom\n \npg_type\n \nt\n \njoin\n \npg_enum\n \ne\n\n\non\n \nt\n.\noid\n \n=\n \ne\n.\nenumtypid\n \njoin\n \npg_catalog\n.\npg_namespace\n \nn\n\n\non\n \nn\n.\noid\n \n=\n \nt\n.\ntypnamespace\n \n\nwhere\n \nt\n.\ntypname\n \n=\n \n${\ntype\n}\n;\n\n\n\n\n\n\nSQL language\n\n\nalter table\n\n\nadd a column\n\n\nALTER\n \nTABLE\n \npersonne\n \nADD\n \nCOLUMN\n \nparent_id\n \nINTEGER\n \nREFERENCES\n \npersonne\n(\nid\n);\n\n\n\n\n\n\ncomment\n\n\nCOMMENT\n \nON\n \nTABLE\n \npersonne\n \nIS\n \ngestion des personnes\n;\n\n\nCOMMENT\n \nON\n \nCOLUMN\n \npersonne\n.\ndate_naissance\n \nIS\n \ndate de naissance\n;\n\n\n\n\n\n\nPostgresql / JSON : sheet cheat\n\n\nMerci \u00e0 \nHackernoon\n.\n\n\n\n\nSelect items by the value of a first level attribute (#1 way)\n\n\n\n\nSELECT\n \n*\n \nFROM\n \nusers\n \nWHERE\n \nmetadata\n \n@\n \n{\ncountry\n: \nPeru\n}\n;\n\n\n\n\n\n\n\n\nSelect items by the value of a first level attribute (#2 way)\n\n\n\n\nSELECT\n \n*\n \nFROM\n \nusers\n \nWHERE\n \nmetadata\n-\ncountry\n \n=\n \nPeru\n;\n\n\n\n\n\n\n\n\nSelect item attribute value\n\n\n\n\nSELECT\n \nmetadata\n-\ncountry\n \nFROM\n \nusers\n;\n\n\n\n\n\n\n\n\nSelect only items where a particular attribute is present\n\n\n\n\nSELECT\n \n*\n \nFROM\n \nusers\n \nWHERE\n \nmetadata\n-\ncountry\n \nIS\n \nNOT\n \nNULL\n;\n\n\n\n\n\n\n\n\nSelect items by the value of a nested attribute\n\n\n\n\nSELECT\n \n*\n \nFROM\n \nusers\n \nWHERE\n \nmetadata\n-\ncompany\n-\nname\n \n=\n \nMozilla\n;\n\n\nSELECT\n \n*\n \n  \nFROM\n \nusers\n \n  \nWHERE\n \nmetadata\n \n@\n \n{\ncompany\n:{\nname\n: \nMozilla\n}}\n;\n\n\n\n\n\n\n\n\nSelect items by the value of an attribute in an array\n\n\n\n\nSELECT\n \n*\n \nFROM\n \nusers\n \nWHERE\n \nmetadata\n \n@\n \n{\ncompanies\n: [\nMozilla\n]}\n;\n\n\n\n\n\n\n\n\nIN operator on attributes\n\n\n\n\nSELECT\n \n*\n \nFROM\n \nusers\n \n  \nWHERE\n \nmetadata\n-\ncountries\n \nIN\n \n(\nChad\n,\n \nJapan\n);\n\n\n\n\n\n\n\n\nInsert a whole object\n\n\n\n\nUPDATE\n \nusers\n \nSET\n \nmetadata\n \n=\n \n{\ncountry\n: \nIndia\n}\n;\n\n\n\n\n\n\n\n\nUpdate or insert an attribute\n\n\n\n\nUPDATE\n \nusers\n \nSET\n \nmetadata\n \n=\n \nmetadata\n \n||\n \n{\ncountry\n: \nEgypt\n}\n;\n\n\n\n\n\n\n\n\nRemoving an attribute\n\n\n\n\nUPDATE\n \nusers\n \nSET\n \nmetadata\n \n=\n \nmetadata\n \n-\n \ncountry\n;", 
             "title": "Postresql"
         }, 
         {
@@ -86,14 +86,19 @@
             "title": "pg_dump: save database"
         }, 
         {
+            "location": "/tips/postresql/#dropdb-drop-database", 
+            "text": "dropdb -U  user   ${ db_name }", 
+            "title": "dropdb : drop database"
+        }, 
+        {
+            "location": "/tips/postresql/#createdb-create-database", 
+            "text": "createdb -u  user   ${ db_name }", 
+            "title": "createdb : create database"
+        }, 
+        {
             "location": "/tips/postresql/#pg_restore-restore-database", 
             "text": "pg_restore -d  ${ db_name }   ${ dump_name } .dmp", 
             "title": "pg_restore : restore database"
-        }, 
-        {
-            "location": "/tips/postresql/#dropdb-drop-database", 
-            "text": "dropdb -U rcv  ${ db_name }", 
-            "title": "dropdb : drop database"
         }, 
         {
             "location": "/tips/postresql/#duplicate-database", 
@@ -102,8 +107,13 @@
         }, 
         {
             "location": "/tips/postresql/#psql", 
-            "text": "connect to database   psql -U  ${ user }   ${ db_name } \n````\n\n* display result in page mode  \\pset pager on  * change database  \\c   ## Database informations\n\n* sessions connected to database\n\n```sql\nselect * from pg_stat_activity;   get information about database   select   table_name ,   column_name  from   information_schema . columns  where   column_name   like   %xxx%   order   by   table_name ,   column_name ;    display enumeration type   select   n . nspname   as   enum_schema ,   t . typname   as   enum_name ,   e . enumlabel   as   enum_value   from   pg_type   t   join   pg_enum   e  on   t . oid   =   e . enumtypid   join   pg_catalog . pg_namespace   n  on   n . oid   =   t . typnamespace   where   t . typname   =   ${ type } ;", 
+            "text": "connect to database   psql -U  ${ user }   ${ db_name }    display result in page mode   \\pset pager on   change database   \\c  other_db", 
             "title": "psql"
+        }, 
+        {
+            "location": "/tips/postresql/#database-informations", 
+            "text": "sessions connected to database   select   *   from   pg_stat_activity ;    get information about database   select   table_name ,   column_name  from   information_schema . columns  where   column_name   like   %xxx%   order   by   table_name ,   column_name ;    display enumeration type   select   n . nspname   as   enum_schema ,   t . typname   as   enum_name ,   e . enumlabel   as   enum_value   from   pg_type   t   join   pg_enum   e  on   t . oid   =   e . enumtypid   join   pg_catalog . pg_namespace   n  on   n . oid   =   t . typnamespace   where   t . typname   =   ${ type } ;", 
+            "title": "Database informations"
         }, 
         {
             "location": "/tips/postresql/#sql-language", 
@@ -229,6 +239,21 @@
             "location": "/tips/linux/mc/#f", 
             "text": "F1  help    F2  user menu    F3  read file / open directory    F4  edit file    F5  copy file or direcotry    F6  move file or directory    F7  create directory    F8  delete file / directory    F9  open menu bar    F10  exit MC", 
             "title": "F"
+        }, 
+        {
+            "location": "/tips/webserver/nginx/", 
+            "text": "Nginx\n\n\nClear Nginx cache\n\n\nrm -rf /var/cache/nginx/*", 
+            "title": "Nginx"
+        }, 
+        {
+            "location": "/tips/webserver/nginx/#nginx", 
+            "text": "", 
+            "title": "Nginx"
+        }, 
+        {
+            "location": "/tips/webserver/nginx/#clear-nginx-cache", 
+            "text": "rm -rf /var/cache/nginx/*", 
+            "title": "Clear Nginx cache"
         }
     ]
 }
