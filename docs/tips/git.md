@@ -2,41 +2,58 @@
 
 * Ajouter/mettre à jour l'url d'un dépôt sur origin
 
-        $ git remote add origin <https://new_url/depot.git>
-        $ git remote set-url origin <https://new_url/depot.git>
+```
+$ git remote add origin <https://new_url/depot.git>
+$ git remote set-url origin <https://new_url/depot.git>
+```        
         
 ### Branches        
 
 * Créer et se placer sur une branche
 
-        $ git checkout -b <branch_name>
-        $ git checkout -b test origin/dev -> crée la branche test et suit la branche origin/dev
+```
+$ git checkout -b <branch_name>
+$ git checkout -b test origin/dev -> crée la branche test et suit la branche origin/dev
+```        
 
 * Supprimer une branche
 
-        $ git branch -d <branch_name>               # supprime la branche locale
-        $ git push origin --delete <branch_name>    # supprime la branche distante
+```
+$ git branch -d <branch_name>               # supprime la branche locale
+$ git push origin --delete <branch_name>    # supprime la branche distante
+```        
 
 ### Commits
 
 * Annuler un merge/commit local
 
-        $ git reflog => montre les références HEAD
-        $ git reset --hard HEAD@{X} => repositionne le head de la branche sur le commit correspondant  
-        /!\ Attention la commande annule toutes les modifications en cours de la branches stagged + commited
+```
+$ git reflog => montre les références HEAD
+$ git reset --hard HEAD@{X} => repositionne le head de la branche sur le commit correspondant  
+/!\ Attention la commande annule toutes les modifications en cours de la branches stagged + commited
+```        
 
 
 ### Log
 
 * Afficher l'historique d'un fichier avec les modifications
- 
-        $ git log -p path/to/file
- 
+
+``` 
+$ git log -p path/to/file
+```
 
 * Recherche des commit liés au texte
 
-        [alias] :
-        str-search = "!f() { git llg -S $1 --all --source $2; }; f"
+```
+$ git log -p --all -S "string à chercher"
+$ git log -p --all -S "string à chercher" --source <fichier dans lequel on recherche>
+```
+        
+* Visualiser le graphe
+
+```
+$ git log --oneline --abbrev-commit --all --graph --decorate --color        
+```
 
 ### Stash
 
@@ -47,4 +64,13 @@
 * rétablir le travail suavegardé sur la branche en cours
 
         $ git stash pop
+
+### Alias
+
+* créer un alias git
+
+```
+$ git config --global alias.graph 'log --oneline --abbrev-commit --all --graph --decorate --color'
+```
+
 
