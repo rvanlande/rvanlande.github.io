@@ -297,6 +297,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#alias" title="Alias" class="md-nav__link">
+    Alias
+  </a>
+  
+</li>
+      
       
       
     </ul>
@@ -520,6 +527,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#alias" title="Alias" class="md-nav__link">
+    Alias
+  </a>
+  
+</li>
+      
       
       
     </ul>
@@ -539,60 +553,63 @@
                 
                 <h3 id="depot">Dépôt</h3>
 <ul>
-<li>Ajouter/mettre à jour l'url d'un dépôt sur origin<div class="codehilite"><pre><span></span>$ git remote add origin &lt;https://new_url/depot.git&gt;
+<li>Ajouter/mettre à jour l'url d'un dépôt sur origin</li>
+</ul>
+<div class="codehilite"><pre><span></span>$ git remote add origin &lt;https://new_url/depot.git&gt;
 $ git remote set-url origin &lt;https://new_url/depot.git&gt;
 </pre></div>
 
 
-</li>
-</ul>
 <h3 id="branches">Branches</h3>
 <ul>
-<li>
-<p>Créer et se placer sur une branche</p>
+<li>Créer et se placer sur une branche</li>
+</ul>
 <div class="codehilite"><pre><span></span>$ git checkout -b &lt;branch_name&gt;
 $ git checkout -b <span class="nb">test</span> origin/dev -&gt; crée la branche <span class="nb">test</span> et suit la branche origin/dev
 </pre></div>
 
 
-</li>
-<li>
-<p>Supprimer une branche</p>
+<ul>
+<li>Supprimer une branche</li>
+</ul>
 <div class="codehilite"><pre><span></span>$ git branch -d &lt;branch_name&gt;               <span class="c1"># supprime la branche locale</span>
 $ git push origin --delete &lt;branch_name&gt;    <span class="c1"># supprime la branche distante</span>
 </pre></div>
 
 
-</li>
-</ul>
 <h3 id="commits">Commits</h3>
 <ul>
-<li>Annuler un merge/commit local<div class="codehilite"><pre><span></span>$ git <span class="nv">reflog</span> <span class="o">=</span>&gt; montre les références HEAD
+<li>Annuler un merge/commit local</li>
+</ul>
+<div class="codehilite"><pre><span></span>$ git <span class="nv">reflog</span> <span class="o">=</span>&gt; montre les références HEAD
 $ git reset --hard HEAD@<span class="o">{</span>X<span class="o">}</span> <span class="o">=</span>&gt; repositionne le head de la branche sur le commit correspondant  
 /!<span class="se">\ </span>Attention la commande annule toutes les modifications en cours de la branches stagged + commited
 </pre></div>
 
 
-</li>
-</ul>
 <h3 id="log">Log</h3>
 <ul>
-<li>
-<p>Afficher l'historique d'un fichier avec les modifications</p>
+<li>Afficher l'historique d'un fichier avec les modifications</li>
+</ul>
 <div class="codehilite"><pre><span></span>$ git log -p path/to/file
 </pre></div>
 
 
-</li>
-<li>
-<p>Recherche des commit liés au texte</p>
-<div class="codehilite"><pre><span></span>[alias] :
-str-search = &quot;!f() { git llg -S $1 --all --source $2; }; f&quot;
+<ul>
+<li>Recherche des commit liés au texte</li>
+</ul>
+<div class="codehilite"><pre><span></span>$ git log -p --all -S <span class="s2">&quot;string à chercher&quot;</span>
+$ git log -p --all -S <span class="s2">&quot;string à chercher&quot;</span> --source &lt;fichier dans lequel on recherche&gt;
 </pre></div>
 
 
-</li>
+<ul>
+<li>Visualiser le graphe</li>
 </ul>
+<div class="codehilite"><pre><span></span>$ git log --oneline --abbrev-commit --all --graph --decorate --color        
+</pre></div>
+
+
 <h3 id="stash">Stash</h3>
 <ul>
 <li>
@@ -610,6 +627,12 @@ str-search = &quot;!f() { git llg -S $1 --all --source $2; }; f&quot;
 
 </li>
 </ul>
+<h3 id="alias">Alias</h3>
+<ul>
+<li>créer un alias git</li>
+</ul>
+<div class="codehilite"><pre><span></span>$ git config --global alias.graph <span class="s1">&#39;log --oneline --abbrev-commit --all --graph --decorate --color&#39;</span>
+</pre></div>
                 
                   
                 

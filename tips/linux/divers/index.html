@@ -372,6 +372,27 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#divers" title="Divers" class="md-nav__link">
+    Divers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ssh" title="SSH" class="md-nav__link">
+    SSH
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ssl-creation-cle-privee-et-certificat" title="SSL : création clé privée et certificat" class="md-nav__link">
+    SSL : création clé privée et certificat
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#reseaux" title="Réseaux" class="md-nav__link">
     Réseaux
   </a>
@@ -388,13 +409,6 @@
         <li class="md-nav__item">
   <a href="#gpg" title="gpg" class="md-nav__link">
     gpg
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#autres" title="Autres" class="md-nav__link">
-    Autres
   </a>
   
 </li>
@@ -485,6 +499,27 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#divers" title="Divers" class="md-nav__link">
+    Divers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ssh" title="SSH" class="md-nav__link">
+    SSH
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ssl-creation-cle-privee-et-certificat" title="SSL : création clé privée et certificat" class="md-nav__link">
+    SSL : création clé privée et certificat
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#reseaux" title="Réseaux" class="md-nav__link">
     Réseaux
   </a>
@@ -501,13 +536,6 @@
         <li class="md-nav__item">
   <a href="#gpg" title="gpg" class="md-nav__link">
     gpg
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#autres" title="Autres" class="md-nav__link">
-    Autres
   </a>
   
 </li>
@@ -529,7 +557,60 @@
                 
                   <h1>Divers</h1>
                 
-                <h2 id="reseaux">Réseaux</h2>
+                <h2 id="divers">Divers</h2>
+<ul>
+<li>recherche dans les fichiers du répertoire courant et de ses sous répertoire</li>
+</ul>
+<div class="codehilite"><pre><span></span>$ grep -rn . -e <span class="s1">&#39;chaine recherchée&#39;</span>
+</pre></div>
+
+
+<ul>
+<li>zipper le contenu d'un répertoire</li>
+</ul>
+<div class="codehilite"><pre><span></span>$ zip -r nom_du_fichier.zip *
+</pre></div>
+
+
+<h2 id="ssh">SSH</h2>
+<ul>
+<li>démarrer l'agent ssh</li>
+</ul>
+<div class="codehilite"><pre><span></span>$ <span class="nb">eval</span> <span class="sb">`</span>ssh-agent -s<span class="sb">`</span>
+</pre></div>
+
+
+<ul>
+<li>ajouter une clé ssh à l'agent</li>
+</ul>
+<div class="codehilite"><pre><span></span>$ ssh-add ~/.ssh/id_rsa
+</pre></div>
+
+
+<h2 id="ssl-creation-cle-privee-et-certificat">SSL : création clé privée et certificat</h2>
+<ul>
+<li>clef privée du serveur</li>
+</ul>
+<div class="codehilite"><pre><span></span>$ <span class="nb">cd</span> /etc/ssl
+$ sudo openssl genrsa -out server.key <span class="m">2048</span>
+</pre></div>
+
+
+<ul>
+<li>Demande de signature du certificat</li>
+</ul>
+<div class="codehilite"><pre><span></span>$ openssl req -text -noout -in server.csr
+</pre></div>
+
+
+<ul>
+<li>Signature du certificat : auto-signé, valide un an</li>
+</ul>
+<div class="codehilite"><pre><span></span>$ openssl x509 -req -days <span class="m">365</span> -in server.csr -signkey server.key -out server.crt
+</pre></div>
+
+
+<h2 id="reseaux">Réseaux</h2>
 <ul>
 <li>voir les ports ouverts :<div class="codehilite"><pre><span></span>$ sudo netstat -tulpn
 </pre></div>
@@ -630,14 +711,6 @@ $ gpg --list-secret-keys
 <li>
 <p>déchiffrer un message</p>
 <div class="codehilite"><pre><span></span>$ gpg -d &lt;file&gt;
-</pre></div>
-
-
-</li>
-</ul>
-<h2 id="autres">Autres</h2>
-<ul>
-<li>zipper le contenu d'un répertoire<div class="codehilite"><pre><span></span>$ zip -r nom_du_fichier.zip *
 </pre></div>
 
 

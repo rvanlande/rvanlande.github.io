@@ -22,33 +22,38 @@
         }, 
         {
             "location": "/tips/git/", 
-            "text": "D\u00e9p\u00f4t\n\n\n\n\nAjouter/mettre \u00e0 jour l'url d'un d\u00e9p\u00f4t sur origin\n$ git remote add origin \nhttps://new_url/depot.git\n\n$ git remote set-url origin \nhttps://new_url/depot.git\n\n\n\n\n\n\n\n\n\n\nBranches\n\n\n\n\n\n\nCr\u00e9er et se placer sur une branche\n\n\n$ git checkout -b \nbranch_name\n\n$ git checkout -b \ntest\n origin/dev -\n cr\u00e9e la branche \ntest\n et suit la branche origin/dev\n\n\n\n\n\n\n\n\n\nSupprimer une branche\n\n\n$ git branch -d \nbranch_name\n               \n# supprime la branche locale\n\n$ git push origin --delete \nbranch_name\n    \n# supprime la branche distante\n\n\n\n\n\n\n\n\n\n\nCommits\n\n\n\n\nAnnuler un merge/commit local\n$ git \nreflog\n \n=\n montre les r\u00e9f\u00e9rences HEAD\n$ git reset --hard HEAD@\n{\nX\n}\n \n=\n repositionne le head de la branche sur le commit correspondant  \n/!\n\\ \nAttention la commande annule toutes les modifications en cours de la branches stagged + commited\n\n\n\n\n\n\n\n\n\nLog\n\n\n\n\n\n\nAfficher l'historique d'un fichier avec les modifications\n\n\n$ git log -p path/to/file\n\n\n\n\n\n\n\n\n\nRecherche des commit li\u00e9s au texte\n\n\n[alias] :\nstr-search = \n!f() { git llg -S $1 --all --source $2; }; f\n\n\n\n\n\n\n\n\n\n\nStash\n\n\n\n\n\n\nsauvegarder le travail en cours de la branche en cours\n\n\n$ git stash save\n\n\n\n\n\n\n\n\n\nr\u00e9tablir le travail suavegard\u00e9 sur la branche en cours\n\n\n$ git stash pop", 
+            "text": "D\u00e9p\u00f4t\n\n\n\n\nAjouter/mettre \u00e0 jour l'url d'un d\u00e9p\u00f4t sur origin\n\n\n\n\n$ git remote add origin \nhttps://new_url/depot.git\n\n$ git remote set-url origin \nhttps://new_url/depot.git\n\n\n\n\n\n\nBranches\n\n\n\n\nCr\u00e9er et se placer sur une branche\n\n\n\n\n$ git checkout -b \nbranch_name\n\n$ git checkout -b \ntest\n origin/dev -\n cr\u00e9e la branche \ntest\n et suit la branche origin/dev\n\n\n\n\n\n\n\nSupprimer une branche\n\n\n\n\n$ git branch -d \nbranch_name\n               \n# supprime la branche locale\n\n$ git push origin --delete \nbranch_name\n    \n# supprime la branche distante\n\n\n\n\n\n\nCommits\n\n\n\n\nAnnuler un merge/commit local\n\n\n\n\n$ git \nreflog\n \n=\n montre les r\u00e9f\u00e9rences HEAD\n$ git reset --hard HEAD@\n{\nX\n}\n \n=\n repositionne le head de la branche sur le commit correspondant  \n/!\n\\ \nAttention la commande annule toutes les modifications en cours de la branches stagged + commited\n\n\n\n\n\nLog\n\n\n\n\nAfficher l'historique d'un fichier avec les modifications\n\n\n\n\n$ git log -p path/to/file\n\n\n\n\n\n\n\nRecherche des commit li\u00e9s au texte\n\n\n\n\n$ git log -p --all -S \nstring \u00e0 chercher\n\n$ git log -p --all -S \nstring \u00e0 chercher\n --source \nfichier dans lequel on recherche\n\n\n\n\n\n\n\n\nVisualiser le graphe\n\n\n\n\n$ git log --oneline --abbrev-commit --all --graph --decorate --color        \n\n\n\n\n\nStash\n\n\n\n\n\n\nsauvegarder le travail en cours de la branche en cours\n\n\n$ git stash save\n\n\n\n\n\n\n\n\n\nr\u00e9tablir le travail suavegard\u00e9 sur la branche en cours\n\n\n$ git stash pop\n\n\n\n\n\n\n\n\n\nAlias\n\n\n\n\ncr\u00e9er un alias git\n\n\n\n\n$ git config --global alias.graph \nlog --oneline --abbrev-commit --all --graph --decorate --color", 
             "title": "Git"
         }, 
         {
             "location": "/tips/git/#depot", 
-            "text": "Ajouter/mettre \u00e0 jour l'url d'un d\u00e9p\u00f4t sur origin $ git remote add origin  https://new_url/depot.git \n$ git remote set-url origin  https://new_url/depot.git", 
+            "text": "Ajouter/mettre \u00e0 jour l'url d'un d\u00e9p\u00f4t sur origin   $ git remote add origin  https://new_url/depot.git \n$ git remote set-url origin  https://new_url/depot.git", 
             "title": "D\u00e9p\u00f4t"
         }, 
         {
             "location": "/tips/git/#branches", 
-            "text": "Cr\u00e9er et se placer sur une branche  $ git checkout -b  branch_name \n$ git checkout -b  test  origin/dev -  cr\u00e9e la branche  test  et suit la branche origin/dev    Supprimer une branche  $ git branch -d  branch_name                 # supprime la branche locale \n$ git push origin --delete  branch_name      # supprime la branche distante", 
+            "text": "Cr\u00e9er et se placer sur une branche   $ git checkout -b  branch_name \n$ git checkout -b  test  origin/dev -  cr\u00e9e la branche  test  et suit la branche origin/dev   Supprimer une branche   $ git branch -d  branch_name                 # supprime la branche locale \n$ git push origin --delete  branch_name      # supprime la branche distante", 
             "title": "Branches"
         }, 
         {
             "location": "/tips/git/#commits", 
-            "text": "Annuler un merge/commit local $ git  reflog   =  montre les r\u00e9f\u00e9rences HEAD\n$ git reset --hard HEAD@ { X }   =  repositionne le head de la branche sur le commit correspondant  \n/! \\  Attention la commande annule toutes les modifications en cours de la branches stagged + commited", 
+            "text": "Annuler un merge/commit local   $ git  reflog   =  montre les r\u00e9f\u00e9rences HEAD\n$ git reset --hard HEAD@ { X }   =  repositionne le head de la branche sur le commit correspondant  \n/! \\  Attention la commande annule toutes les modifications en cours de la branches stagged + commited", 
             "title": "Commits"
         }, 
         {
             "location": "/tips/git/#log", 
-            "text": "Afficher l'historique d'un fichier avec les modifications  $ git log -p path/to/file    Recherche des commit li\u00e9s au texte  [alias] :\nstr-search =  !f() { git llg -S $1 --all --source $2; }; f", 
+            "text": "Afficher l'historique d'un fichier avec les modifications   $ git log -p path/to/file   Recherche des commit li\u00e9s au texte   $ git log -p --all -S  string \u00e0 chercher \n$ git log -p --all -S  string \u00e0 chercher  --source  fichier dans lequel on recherche    Visualiser le graphe   $ git log --oneline --abbrev-commit --all --graph --decorate --color", 
             "title": "Log"
         }, 
         {
             "location": "/tips/git/#stash", 
             "text": "sauvegarder le travail en cours de la branche en cours  $ git stash save    r\u00e9tablir le travail suavegard\u00e9 sur la branche en cours  $ git stash pop", 
             "title": "Stash"
+        }, 
+        {
+            "location": "/tips/git/#alias", 
+            "text": "cr\u00e9er un alias git   $ git config --global alias.graph  log --oneline --abbrev-commit --all --graph --decorate --color", 
+            "title": "Alias"
         }, 
         {
             "location": "/tips/mkdocs/", 
@@ -197,8 +202,23 @@
         }, 
         {
             "location": "/tips/linux/divers/", 
-            "text": "R\u00e9seaux\n\n\n\n\nvoir les ports ouverts :\n$ sudo netstat -tulpn\n\n\n\n\n\n\n\n\n\nSystemd\n\n\n\n\n\n\nliste les services\n\n\n$ systemctl\n\n\n\n\n\n\n\n\n\nd\u00e9marre un service\n\n\n$ systemctl start exim4\n\n\n\n\n\n\n\n\n\narr\u00eate un service\n\n\n$ systemctl stop exim4\n\n\n\n\n\n\n\n\n\naffiche le statut d'un service\n\n\n$ systemctl status exim4\n\n\n\n\n\n\n\n\n\nactive le service au d\u00e9marrage\n\n\n$ systemctl \nenable\n exim4\n\n\n\n\n\n\n\n\n\nd\u00e9sactive le service au d\u00e9marrage\n\n\n$ systemctl disable exim4\n\n\n\n\n\n\n\n\n\ngpg\n\n\n\n\n\n\ng\u00e9n\u00e9ration des cl\u00e9s\n\n\n$ gpg --gen-key\n\n\n\n\n\n\n\n\n\nafficher les cl\u00e9s\n\n\n$ gpg --list-keys\n$ gpg --list-secret-keys\n\n\n\n\n\n\n\n\n\nimporter une cl\u00e9\n\n\n$\n \ngpg\n \n--\nimport\n \nkey\n-\nfile\n\n\n\n\n\n\n\n\n\n\nexporter une cl\u00e9 publique\n\n\n$ gpg -a --export \nid-cle\n\n\n\n\n\n\n\n\n\n\nexporter une cl\u00e9 priv\u00e9e\n\n\n$ gpg -a --export-secret-key \nid-cle\n\n\n\n\n\n\n\n\n\n\nchiffrer un message\n\n\n$ gpg -a -r \nemail\n -e \nfile\n\n\n\n\n\n\n\n\n\n\nd\u00e9chiffrer un message\n\n\n$ gpg -d \nfile\n\n\n\n\n\n\n\n\n\n\nAutres\n\n\n\n\nzipper le contenu d'un r\u00e9pertoire\n$ zip -r nom_du_fichier.zip *", 
+            "text": "Divers\n\n\n\n\nrecherche dans les fichiers du r\u00e9pertoire courant et de ses sous r\u00e9pertoire\n\n\n\n\n$ grep -rn . -e \nchaine recherch\u00e9e\n\n\n\n\n\n\n\n\nzipper le contenu d'un r\u00e9pertoire\n\n\n\n\n$ zip -r nom_du_fichier.zip *\n\n\n\n\n\nSSH\n\n\n\n\nd\u00e9marrer l'agent ssh\n\n\n\n\n$ \neval\n \n`\nssh-agent -s\n`\n\n\n\n\n\n\n\n\najouter une cl\u00e9 ssh \u00e0 l'agent\n\n\n\n\n$ ssh-add ~/.ssh/id_rsa\n\n\n\n\n\nSSL : cr\u00e9ation cl\u00e9 priv\u00e9e et certificat\n\n\n\n\nclef priv\u00e9e du serveur\n\n\n\n\n$ \ncd\n /etc/ssl\n$ sudo openssl genrsa -out server.key \n2048\n\n\n\n\n\n\n\n\nDemande de signature du certificat\n\n\n\n\n$ openssl req -text -noout -in server.csr\n\n\n\n\n\n\n\nSignature du certificat : auto-sign\u00e9, valide un an\n\n\n\n\n$ openssl x509 -req -days \n365\n -in server.csr -signkey server.key -out server.crt\n\n\n\n\n\nR\u00e9seaux\n\n\n\n\nvoir les ports ouverts :\n$ sudo netstat -tulpn\n\n\n\n\n\n\n\n\n\nSystemd\n\n\n\n\n\n\nliste les services\n\n\n$ systemctl\n\n\n\n\n\n\n\n\n\nd\u00e9marre un service\n\n\n$ systemctl start exim4\n\n\n\n\n\n\n\n\n\narr\u00eate un service\n\n\n$ systemctl stop exim4\n\n\n\n\n\n\n\n\n\naffiche le statut d'un service\n\n\n$ systemctl status exim4\n\n\n\n\n\n\n\n\n\nactive le service au d\u00e9marrage\n\n\n$ systemctl \nenable\n exim4\n\n\n\n\n\n\n\n\n\nd\u00e9sactive le service au d\u00e9marrage\n\n\n$ systemctl disable exim4\n\n\n\n\n\n\n\n\n\ngpg\n\n\n\n\n\n\ng\u00e9n\u00e9ration des cl\u00e9s\n\n\n$ gpg --gen-key\n\n\n\n\n\n\n\n\n\nafficher les cl\u00e9s\n\n\n$ gpg --list-keys\n$ gpg --list-secret-keys\n\n\n\n\n\n\n\n\n\nimporter une cl\u00e9\n\n\n$\n \ngpg\n \n--\nimport\n \nkey\n-\nfile\n\n\n\n\n\n\n\n\n\n\nexporter une cl\u00e9 publique\n\n\n$ gpg -a --export \nid-cle\n\n\n\n\n\n\n\n\n\n\nexporter une cl\u00e9 priv\u00e9e\n\n\n$ gpg -a --export-secret-key \nid-cle\n\n\n\n\n\n\n\n\n\n\nchiffrer un message\n\n\n$ gpg -a -r \nemail\n -e \nfile\n\n\n\n\n\n\n\n\n\n\nd\u00e9chiffrer un message\n\n\n$ gpg -d \nfile", 
             "title": "Divers"
+        }, 
+        {
+            "location": "/tips/linux/divers/#divers", 
+            "text": "recherche dans les fichiers du r\u00e9pertoire courant et de ses sous r\u00e9pertoire   $ grep -rn . -e  chaine recherch\u00e9e    zipper le contenu d'un r\u00e9pertoire   $ zip -r nom_du_fichier.zip *", 
+            "title": "Divers"
+        }, 
+        {
+            "location": "/tips/linux/divers/#ssh", 
+            "text": "d\u00e9marrer l'agent ssh   $  eval   ` ssh-agent -s `    ajouter une cl\u00e9 ssh \u00e0 l'agent   $ ssh-add ~/.ssh/id_rsa", 
+            "title": "SSH"
+        }, 
+        {
+            "location": "/tips/linux/divers/#ssl-creation-cle-privee-et-certificat", 
+            "text": "clef priv\u00e9e du serveur   $  cd  /etc/ssl\n$ sudo openssl genrsa -out server.key  2048    Demande de signature du certificat   $ openssl req -text -noout -in server.csr   Signature du certificat : auto-sign\u00e9, valide un an   $ openssl x509 -req -days  365  -in server.csr -signkey server.key -out server.crt", 
+            "title": "SSL : cr\u00e9ation cl\u00e9 priv\u00e9e et certificat"
         }, 
         {
             "location": "/tips/linux/divers/#reseaux", 
@@ -214,11 +234,6 @@
             "location": "/tips/linux/divers/#gpg", 
             "text": "g\u00e9n\u00e9ration des cl\u00e9s  $ gpg --gen-key    afficher les cl\u00e9s  $ gpg --list-keys\n$ gpg --list-secret-keys    importer une cl\u00e9  $   gpg   -- import   key - file     exporter une cl\u00e9 publique  $ gpg -a --export  id-cle     exporter une cl\u00e9 priv\u00e9e  $ gpg -a --export-secret-key  id-cle     chiffrer un message  $ gpg -a -r  email  -e  file     d\u00e9chiffrer un message  $ gpg -d  file", 
             "title": "gpg"
-        }, 
-        {
-            "location": "/tips/linux/divers/#autres", 
-            "text": "zipper le contenu d'un r\u00e9pertoire $ zip -r nom_du_fichier.zip *", 
-            "title": "Autres"
         }, 
         {
             "location": "/tips/linux/mc/", 
@@ -242,7 +257,7 @@
         }, 
         {
             "location": "/tips/webserver/nginx/", 
-            "text": "Nginx\n\n\nClear Nginx cache\n\n\nrm -rf /var/cache/nginx/*", 
+            "text": "Nginx\n\n\nClear Nginx cache\n\n\n$ rm -rf /var/cache/nginx/*", 
             "title": "Nginx"
         }, 
         {
@@ -252,7 +267,7 @@
         }, 
         {
             "location": "/tips/webserver/nginx/#clear-nginx-cache", 
-            "text": "rm -rf /var/cache/nginx/*", 
+            "text": "$ rm -rf /var/cache/nginx/*", 
             "title": "Clear Nginx cache"
         }
     ]
