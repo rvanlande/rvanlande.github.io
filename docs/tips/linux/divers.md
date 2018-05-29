@@ -12,6 +12,41 @@ $ grep -rn . -e 'chaine recherchée'
 $ zip -r nom_du_fichier.zip *
 ```
 
+## SSH
+
+* démarrer l'agent ssh
+
+```
+$ eval `ssh-agent -s`
+```
+
+* ajouter une clé ssh à l'agent
+
+```
+$ ssh-add ~/.ssh/id_rsa
+```
+
+## SSL : création clé privée et certificat
+
+* clef privée du serveur
+
+```
+$ cd /etc/ssl
+$ sudo openssl genrsa -out server.key 2048
+```
+
+* Demande de signature du certificat
+
+```
+$ openssl req -text -noout -in server.csr
+```
+
+* Signature du certificat : auto-signé, valide un an
+
+```
+$ openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt
+```
+
 ## Réseaux
 
 * voir les ports ouverts :
@@ -75,7 +110,7 @@ $ zip -r nom_du_fichier.zip *
 
         $ gpg -d <file>
 
-## Autres
+
 
 
 
