@@ -1,3 +1,17 @@
+## Divers
+
+* recherche dans les fichiers du répertoire courant et de ses sous répertoire
+
+```
+$ grep -rn . -e 'chaine recherchée'
+```
+
+* zipper le contenu d'un répertoire
+
+```
+$ zip -r nom_du_fichier.zip *
+```
+
 ## Réseaux
 
 * voir les ports ouverts :
@@ -63,7 +77,5 @@
 
 ## Autres
 
-* zipper le contenu d'un répertoire
 
-        $ zip -r nom_du_fichier.zip *
 
