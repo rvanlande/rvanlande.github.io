@@ -2,23 +2,13 @@
     "docs": [
         {
             "location": "/", 
-            "text": "Bienvenue sur mon humble site d\u00e9di\u00e9 \u00e0 tout ce qui touche au d\u00e9veloppement logiciel !\n\n\nVous y trouverez  :\n\n\n\n\ndes trucs et astuces dont je peux me servir comme pense-b\u00eate : \nlinux\n \ngit\n \nsql\n \ndocker\n  \n\n\ndes articles (\u00e0 venir)   \n\n\ndes projets personnels :\n\n\nRunning Arena\n\n\n\n\n\n\nune pr\u00e9sentation personnelle : \nabout me\n\n\n\n\nBonne navigation !", 
+            "text": "Bienvenue sur mon humble site d\u00e9di\u00e9 \u00e0 tout ce qui touche au d\u00e9veloppement logiciel !\n\n\nVous y trouverez  :\n\n\n\n\ndes trucs et astuces dont je peux me servir comme pense-b\u00eate : \n\n\nlinux\n \n\n\ngit\n \n\n\nsql\n \n\n\ndocker\n  \n\n\n\n\n\n\nune pr\u00e9sentation personnelle : \nabout me", 
             "title": "Home"
         }, 
         {
             "location": "/about/", 
             "text": "Renaud Vanlande", 
             "title": "About"
-        }, 
-        {
-            "location": "/articles/", 
-            "text": "Coming soon !", 
-            "title": "Articles"
-        }, 
-        {
-            "location": "/projets/running_arena/", 
-            "text": "D\u00e9veloppement d'une application de suivi en temps r\u00e9el de courses \u00e0 pieds.\n\n\nRunning Arena", 
-            "title": "Running arena"
         }, 
         {
             "location": "/tips/git/", 
